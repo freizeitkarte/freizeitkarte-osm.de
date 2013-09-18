@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+    <title>Freizeitkarte - Entwicklung einer individuellen Karte</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../design-1.css" />
+  </head>
+
+  <body>
+
+    <div id="title">
+      <h3 style="text-align: center">Freizeitkarte - Entwicklung einer individuellen Karte</h3>
+    </div>
+
+    <div id="left">
+      <p> <a href="./index.html">&Uuml;berblick</a><br />
+        <a href="./ausgabe.html">Ausgabe</a><br />
+        <a href="./installation.html">Installation</a><br />
+        <a href="./deutschland.html">Deutschland</a><br />
+        <a href="./polen.html">Polen</a><br />
+        <a href="./oesterreich.html">&Ouml;sterreich</a><br />
+        <a href="./schweiz.html">Schweiz</a><br />
+        <a href="./frankreich.html">Frankreich</a><br />
+        <a href="./luxemburg.html">Luxemburg</a><br />
+        <a href="./schweden.html">Schweden</a><br />
+        <a href="./weitere-laender.html">Weitere L&auml;nder</a><br />
+        <a href="./plus-laender.html">Plusl&auml;nder</a><br />
+        <a href="./regionen.html">Regionen</a><br />
+        <a href="./legende.html">Legende</a><br />
+        <a href="./design.html">Design</a><br />
+        <a href="./indexsuche.html">Indexsuche</a><br />
+        <a href="./routing.html">Routing</a><br />
+        Entwicklung<br />
+        <a href="./dies-und-das.html">Dies-Und-Das</a><br />
+        <a href="./hilf-mit.html">Hilf mit!</a><br />
+        <a href="./impressum.html">Spende<br />
+        Impressum</a>
+      </p>
+    </div>
+
+    <div id="content">
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-1.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p>Jedermann ist herzlich eingeladen ... seine eigene Karte zu erstellen. Dies kann unter folgenden Aspekten interessant sein:
+      </p>
+
+      <ol>
+        <li><strong>Aktualit&auml;t:</strong><br />
+          Es ist m&ouml;glich, jederzeit eine "neue" Karte aus "tagesaktuellen" OSM-Daten zu erzeugen. Hierzu sind die OSM-Daten aus dem Internet zu laden und die Karte ist neu zu bilden. Alle hierzu erforderlichen Ablaufschritte werden durch verschiedene Aufrufe des Perl-Programmes <strong>"mt.pl"</strong> vereinfacht.
+        </li>
+        <li> <strong>Inhalt:</strong><br />
+          &Uuml;ber den Inhalt definieren sich die Objekte (Fl&auml;chen, Linien, POIs) die auf der Karte in den verschiedenen Vergr&ouml;&szlig;erungsstufen jeweils zur Anzeige kommen. In den Freizeitkarten vorhandene Standardobjekte k&ouml;nnen entfernt oder individuelle Elemente k&ouml;nnen hinzugef&uuml;gt werden. Dies gilt f&uuml;r nahezu alle Elemente des OSM-Datenbestands. Die Definition der Objekte erfolgt im wesentlichen in den drei Styledateien "polygons", "lines" und "points". Die Bearbeitung dieser Dateien erfolgt mit einem Standard-Texteditor (z.B. TextWrangler f&uuml;r OS X oder Notepad++ f&uuml;r Windows). Umfangreiche Kommentare in den Styledateien erleichtern den Einstieg in das Thema.
+        </li>
+        <li> <strong>Design:</strong><br />
+          Das Design legt das optische Erscheinungsbild der Karte fest. Hierbei kann jedes Objekt in der Darstellung beeinflu&szlig;t werden. Bei Fl&auml;chen ist dies z.B. die Farbe, bei Linien z.B. die Breite und bei POIs das Darstellungsicon. Das Erscheinungsbild wird in einer bin&auml;ren TYP-Datei festgelegt, die mit einem speziellen Editor bearbeitet werden kann (z.B. TYPViewer f&uuml;r Windows).
+        </li>
+      </ol>
+
+      <p> Die Aspekte "Inhalt" und "Design" stehen in enger Wechselwirkung zueinander. Soll z.B. ein neues Objekt auf der Karte angezeigt werden, so ist dieses Objekt sowohl inhaltlich als auch vom Erscheinungsbild zu definieren.
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-2.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Workflow zur Erstellung einer Freizeitkarte (Beispiel: Freizeitkarte_Hamburg):</strong></p>
+
+      <p>1. create:<br />
+        - L&ouml;schen von "alten" Daten<br />
+        - Neuanlegen von erforderlichen Verzeichnissen<br />
+        - Kommando: <strong>perl mt.pl create Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 190px;" src="./../images/FZK-Workflow-1.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p> 2a. fetch_osm:<br />
+        - Laden der OSM-Kartendaten f&uuml;r das Bundesland Hamburg<br />
+        - Datenquelle: OSM-Extrakt von geofabrik<br />
+        - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
+        - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>2b. fetch_ele:<br />
+        - Laden der H&ouml;hendaten (elevations) f&uuml;r das Bundesland Hamburg<br />
+        - Datenquelle: www.freizeitkarte-osm.de<br />
+        - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
+        - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p> 3. join:<br />
+        - Zusammenf&uuml;hren der Karten- und H&ouml;hendaten<br />
+        - auch erforderlich wenn nur Kartendaten verarbeitet werden sollen<br />
+        - Kommando: <strong>perl mt.pl join Freizeitkarte_Hamburg</strong>
+      </p>
+      
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-2.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p> 4. split:<br />
+        - Aufteilen (split) der OSM-Daten in Kacheln<br />
+        - Kommando: <strong>perl mt.pl split Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>5. build:<br />
+        - Erzeugen einer individuellen Konfigurationsdatei<br />
+        - Erzeugen aller Karten-Images (img, mdx, tdb)<br />
+        - Kommando: <strong>perl mt.pl build Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-3.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p>6. gmap:<br />
+        - Erzeugen eines individuellen TYP-Files<br />
+        - Erzeugen einer gmap-Datei zur Installation unter OS X ("Garmin MapManager")<br />
+        - Kommando: <strong>perl mt.pl gmap Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>6. nsis:<br />
+        - Erzeugen eines individuellen TYP-Files<br />
+        - Erzeugen einer Input-Datei f&uuml;r den NSIS-Compiler<br />
+        - Erzeugen einer ausf&uuml;hrbaren Windows-Installerdatei<br />
+        - dieser Schritt mu&szlig; unter Windows ausgef&uuml;hrt werden<br />
+        - Kommando: <strong>perl mt.pl nsis Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>6. gmapsupp.img:<br />
+        - Erzeugen eines gmapsupp-Image-Datei<br />
+        - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_Hamburg</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-3.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Bedienung:</strong></p>
+
+      <p><strong>MapTool (mt.pl):</strong><br />
+        Ruft man das Utility "mt.pl" (MapTool) ohne Parameter auf, wird folgender Hilfetext ausgegeben:
+      </p>
+
+      <pre><span style="color: rgb(0,0,205)">
+mt.pl - Map Tool for creating Garmin maps, 1.3.3 - 2013/09/04
+
+Usage:
+perl mt.pl [-ram=Value] [-cores=Value] [-ele=Value] [-typfile="filename"] [-language="lang"] &lt;Action&gt; &lt;ID | Code | Map&gt; [PPO] ... [PPO]
+
+  or for getting help:
+  perl mt.pl -? | -h
+
+Examples:
+perl mt.pl                              build     Freizeitkarte_Hamburg
+perl mt.pl  -ram=1536    -cores=2       build     Freizeitkarte_Hamburg
+perl mt.pl  -ram=6000                   build     5815
+perl mt.pl  -ram=6000    -cores=max     build     5815
+perl mt.pl  -ram=6000    -cores=max     build     Freizeitkarte_Oesterreich  DT36ROUTING
+
+Options:
+-ram      = javaheapsize in MB (join, split, build) (default = 1536)
+-cores    = max. number of CPU cores (build) (1, 2, ..., max; default = 2)
+-ele      = equidistance of elevation lines (fetch_ele) (10, 25; default = 25)
+-typfile  = filename of a valid typfile to be used (build, gmap, nsis, gmapsupp, imagedir, typ) (default = freizeit.TYP)
+-language = overwrite the default language of a map (en=english, de=german);
+            if you build a map for another language than the map's default language,
+            this option needs to be set for all subcommands, else it swaps back to the default language and possibly fails.
+PPO       = preprocessor options (multiple possible)
+
+Arguments:
+Action    = Action to be processed
+ID        = ID of the to processed map
+Code      = Code of the to processed map
+Map       = Name of the to be processed map
+
+Actions:
+create     = 1.  (re)create all directories
+fetch_osm  = 2a. fetch osm data from url
+fetch_ele  = 2b. fetch elevation data from url
+join       = 3.  join osm and elevation data
+split      = 4.  split map data into tiles
+build      = 5.  build map files (img, mdx, tdb)
+gmap       = 6.  create gmap file (for BaseCamp OS X, Windows)
+nsis       = 6.  create nsis installer (for BaseCamp Windows)
+gmapsupp   = 6.  create gmapsupp image (for GPS receiver)
+imagedir   = 6.  create image directory (e.g. for QLandkarte)
+
+ID = Code = Map  (default language):
+5810 = BADEN-WUERTTEMBERG         = Freizeitkarte_BADEN-WUERTTEMBERG                  (de)
+5811 = BAYERN                     = Freizeitkarte_BAYERN                              (de)
+5812 = BERLIN                     = Freizeitkarte_BERLIN                              (de)
+5813 = BRANDENBURG                = Freizeitkarte_BRANDENBURG                         (de)
+5814 = BREMEN                     = Freizeitkarte_BREMEN                              (de)
+5815 = HAMBURG                    = Freizeitkarte_HAMBURG                             (de)
+5816 = HESSEN                     = Freizeitkarte_HESSEN                              (de)
+5817 = MECKLENBURG-VORPOMMERN     = Freizeitkarte_MECKLENBURG-VORPOMMERN              (de)
+5818 = NIEDERSACHSEN              = Freizeitkarte_NIEDERSACHSEN                       (de)
+5819 = NORDRHEIN-WESTFALEN        = Freizeitkarte_NORDRHEIN-WESTFALEN                 (de)
+5820 = RHEINLAND-PFALZ            = Freizeitkarte_RHEINLAND-PFALZ                     (de)
+5821 = SAARLAND                   = Freizeitkarte_SAARLAND                            (de)
+5822 = SACHSEN                    = Freizeitkarte_SACHSEN                             (de)
+5823 = SACHSEN-ANHALT             = Freizeitkarte_SACHSEN-ANHALT                      (de)
+5824 = SCHLESWIG-HOLSTEIN         = Freizeitkarte_SCHLESWIG-HOLSTEIN                  (de)
+5825 = THUERINGEN                 = Freizeitkarte_THUERINGEN                          (de)
+6056 = BEL                        = Freizeitkarte_BEL                                 (en)
+6208 = DNK                        = Freizeitkarte_DNK                                 (en)
+6276 = DEU                        = Freizeitkarte_DEU                                 (de)
+6250 = FRA                        = Freizeitkarte_FRA                                 (en)
+6442 = LUX                        = Freizeitkarte_LUX                                 (en)
+6528 = NLD                        = Freizeitkarte_NLD                                 (en)
+6040 = AUT                        = Freizeitkarte_AUT                                 (de)
+6616 = POL                        = Freizeitkarte_POL                                 (en)
+6752 = SWE                        = Freizeitkarte_SWE                                 (en)
+6756 = CHE                        = Freizeitkarte_CHE                                 (de)
+6203 = CZE                        = Freizeitkarte_CZE                                 (en)
+      </pre>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-4.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Terminal / Kommandofenster:</strong><br />
+        - die Arbeitsschritte zur Erzeugung einer Karte erfolgen &uuml;ber ein Terminal<br />
+        - hierzu sind die einzelnen Kommandos manuell im Terminal einzugeben<br />
+        - oder alternativ k&ouml;nnen entsprechende Batchdateien erstellt werden<br />
+        - das Windows-Synonym f&uuml;r Terminal lautet oft auch "Kommandofenster"
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 665px; height: 199px;" src="./../images/FZK_Terminal.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Vorbedingungen:</strong><br />
+        - Perl (5.10) mu&szlig; installiert sein<br />
+        - Java (1.6) mu&szlig; installiert sein<br />
+        - mindestens 2 GB Hauptspeicher
+      </p>
+
+      <p><strong>Empfehlungen zur Erzeugung einer Karte f&uuml;r ein Bundesland:</strong><br />
+        - siehe Vorbedingungen<br />
+        - Standardeinstellungen
+      </p>
+
+      <p><strong>Empfehlungen zur Erzeugung einer Karte f&uuml;r Deutschland:</strong><br />
+        - leistungsstarke Mehr-Kern-CPU<br />
+        - Java-Virtual-Machine mit 64bit<br />
+        - je benutztem Prozessorkern sollte mindestens 1 GB RAM zur Verf&uuml;gung stehen
+      </p>
+
+      <p><strong>Anmerkung:</strong><br />
+        - der Einstieg in die Kartenentwicklung sollte mit einer m&ouml;glichst kleinen Karte erfolgen<br />
+        - der Buildproze&szlig; der Deutschlandkarte dauert bei Verwendung von 4 CPU-Kernen ca. 45 Minuten<br />
+        - weitere Informationen zur Entwicklungsumgebung finden sich in der Datei "readme.txt"<br />
+        - die Entwicklungsumgebung ist lauff&auml;hig unter OS X, Windows und Linux<br />
+        - unter 64-Bit Linux-Systemen muss die Unterst&uuml;tzung f&uuml;r 32-Bit Programme installiert sein<br />
+        - f&uuml;r das Erstellen des Windows-Installers unter Linux muss das NSIS (Nullsoft Scriptable Install System) Paket installiert sein
+      </p>
+
+      <p><strong>Schalter:</strong><br />
+        In den Kartenstyles sind einige logische Schalter (bedingte &Uuml;bersetzung) eingebaut, die aktiviert werden k&ouml;nnen:<br />
+        - WINTERSPORT: Darstellung von Linien f&uuml;r Wintersportaktivit&auml;ten (Pisten, Loipen, ...) [lines-master]<br />
+        - T36ROUTING: Routing auch &uuml;ber (Berg-)Wanderwege der Klassen T3-T6 [lines-master]<br />
+        - TRIGMARK: Darstellung von Trigonometrischen Markierungen [points-master]<br />
+        - DRINKINGWATER: Darstellung von Trinkwasserstellen [points-master]<br />
+        - KULTURLAND: Darstellung von Ackerfl&auml;chen [polygons-master]<br />
+        <br />
+      </p>
+ 
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-5.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <h3>Freizeitkarte Entwicklungsumgebung - Ausgabe 13.09 (0.5 GB)</h3>
+
+      <p><a href="http://download.freizeitkarte-osm.de/Development/1309/Freizeitkarte-Entwicklung.zip">Download</a>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-6.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+    </div>
+
+    <div id="footer">
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2013/09/08</h5>
+    </div>
+
+  </body>
+</html>

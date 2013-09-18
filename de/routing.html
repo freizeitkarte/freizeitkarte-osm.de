@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>Freizeitkarte - Routing</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../design-1.css" />
+  </head>
+
+  <body>
+    <div id="title">
+      <h3 style="text-align: center">Freizeitkarte - Routing</h3>
+    </div>
+
+    <div id="left">
+      <p><a href="./index.html">&Uuml;berblick</a><br />
+        <a href="./ausgabe.html">Ausgabe</a><br />
+        <a href="./installation.html">Installation</a><br />
+        <a href="./deutschland.html">Deutschland</a><br />
+        <a href="./polen.html">Polen</a><br />
+        <a href="./oesterreich.html">&Ouml;sterreich</a><br />
+        <a href="./schweiz.html">Schweiz</a><br />
+        <a href="./frankreich.html">Frankreich</a><br />
+        <a href="./luxemburg.html">Luxemburg</a><br />
+        <a href="./schweden.html">Schweden</a><br />
+        <a href="./weitere-laender.html">Weitere L&auml;nder</a><br />
+        <a href="./plus-laender.html">Plusl&auml;nder</a><br />
+        <a href="./regionen.html">Regionen</a><br />
+        <a href="./legende.html">Legende</a><br />
+        <a href="./design.html">Design</a><br />
+        <a href="./indexsuche.html">Indexsuche</a><br />
+        Routing<br />
+        <a href="./entwicklung.html">Entwicklung</a><br />
+        <a href="./dies-und-das.html">Dies-Und-Das</a><br />
+        <a href="./hilf-mit.html">Hilf mit!</a><br />
+        <a href="./impressum.html">Spende<br />
+        Impressum</a>
+      </p>
+    </div>
+
+    <div id="content">
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/Routing-Trenner-2.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Automatische Routenberechnung (Routing):</strong><br />
+        Jede Stra&szlig;e / jeder Weg ist typischerweise nur f&uuml;r bestimmte Benutzungsarten vorgesehen.<br />
+        Diese Beschr&auml;nkungen sind in der Freizeitkarte hinterlegt.<br />
+        Die automatische Routenberechnung versucht diese Randbedingungen zu ber&uuml;cksichtigen.<br />
+        Die Route selbst wird durch BaseCamp oder das GPS-Ger&auml;t berechnet.
+      </p>
+
+      <p><strong>Beim Routing wird generell unterschieden zwischen:</strong><br />
+        - Autofahrer<br />
+        - Radfahrer<br />
+        - Fu&szlig;g&auml;nger<br />
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Erforderliche Routingeinstellungen (BaseCamp, GPS-Ger&auml;t):</strong>
+      </p>
+
+      <table style="width: 807px; height: 300px;" class="style2">
+        <tbody>
+
+          <tr>
+            <th> &nbsp;</th>
+            <th> Direkt</th>
+            <th> Autofahrer</th>
+            <th> Radfahrer</th>
+            <th> Fu&szlig;g&auml;nger</th>
+          </tr>
+
+          <tr>
+            <td> Routenpr&auml;ferenz</td>
+            <td> Luftlinie</td>
+            <td> nach Entfernung<br />
+              <u>nach Zeit</u>
+            </td>
+            <td> <u>nach Entfernung</u><br />
+              nach Zeit
+            </td>
+            <td> <u>nach Entfernung</u><br />
+              nach Zeit
+            </td>
+          </tr>
+
+          <tr class="zeilenfarbe">
+            <td> Autobahn<br />
+              Bundesstra&szlig;e
+            </td>
+            <td> -</td>
+            <td> nicht vermeiden</td>
+            <td> <s><span style="color: rgb(255,0,0)">vermeiden</span></s><br />
+            nicht vermeiden<sup>*</sup></td>
+            <td> <s><span style="color: rgb(255,0,0)">vermeiden</span></s><br />
+            nicht vermeiden<sup>*</sup>
+            </td>
+          </tr>
+
+          <tr>
+            <td> Mautstra&szlig;e<br />
+              <br />
+            </td>
+            <td> -</td>
+            <td> <span style="color: rgb(255,0,0)">vermeiden</span></td>
+            <td> nicht vermeiden</td>
+            <td> nicht vermeiden</td>
+          </tr>
+
+          <tr class="zeilenfarbe">
+            <td> Fahrgemeinschaftsspur<br />
+              <br />
+            </td>
+            <td> -</td>
+            <td> <span style="color: rgb(255,0,0)">vermeiden</span></td>
+            <td> <span style="color: rgb(255,0,0)">vermeiden</span></td>
+            <td> nicht vermeiden</td>
+          </tr>
+ 
+          <tr>
+            <td> Unbefestigte Stra&szlig;e</td>
+            <td> -</td>
+            <td> nicht vermeiden<br />
+              <u>vermeiden</u>
+            </td>
+            <td> <u>nicht vermeiden</u><br />
+              vermeiden
+            </td>
+            <td> <u>nicht vermeiden</u><br />
+              vermeiden
+            </td>
+          </tr>
+ 
+        </tbody>
+      </table>
+
+      <p><sup>*</sup> Hinweis: Mit BaseCamp 4.2.2 führt die Option "Autobahn / Bundesstra&szlig;e vermeiden" mitunter zu unlogischen Routen.
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/Routing-Trenner-3.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Informationen zum besseren Verst&auml;ndnis des Routings:</strong>
+      </p>
+
+      <ul>
+        <li>Autobahn: ist gesetzlich f&uuml;r Radfahrer und Fu&szlig;g&auml;nger gesperrt</li>
+        <li>Mautstra&szlig;e: schlie&szlig;t Autofahrer von der Benutzung des Weges aus (z.B. Rad- und Fu&szlig;weg)</li>
+        <li>Fahrgemeinschaftspur: schlie&szlig;t Auto-&nbsp;und Radfahrer von der Benutzung des Weges aus (z.B. Fu&szlig;weg, Treppe, Fu&szlig;g&auml;ngerzone)</li>
+        <li>Unbefestigter Stra&szlig;e: Stra&szlig;e mit unbefestigter Oberfl&auml;che (verdichtete Decke, Schotter, ...), Feld- und Waldweg der Klassen 2-5</li>
+        <li>Feld- und Waldweg: ist generell f&uuml;r Autofahrer gesperrt</li>
+        <li>private Stra&szlig;e oder Weg: ist generell vom Routing ausgeschlossen</li>
+        <li>(Berg-)Wanderweg: Wege der Kategorien 3-6 sind generell vom Routing ausgeschlossen (Ausnahme: FZK Alpen)</li>
+      </ul>
+
+      <p><strong>Anmerkungen:</strong>
+      </p>
+
+      <ul>
+        <li>"Unbefestigte Stra&szlig;en" sind typischerweise nur f&uuml;r gel&auml;ndetaugliche Fahrzeuge geeignet.</li>
+        <li>Die Routingeinstellungen sind sowohl f&uuml;r BaseCamp als auch im GPS-Ger&auml;t vorzunehmen.</li>
+        <li>Je k&uuml;rzer die Strecke desto "besser" das Routingergebnis (z.B. Teilstrecken &lt;30 km).</li>
+        <li>Stra&szlig;enbarrieren wie z.B. Poller werden derzeit f&uuml;r das Routing nicht ber&uuml;cksichtigt.</li>
+      </ul>
+      <p><strong>Empfehlung f&uuml;r 4.x und GPS-Ger&auml;t:</strong><br />
+        - Verwendung der Profile f&uuml;r "Auto", "Fahrrad" und "Zu Fuss"<br />
+        - Einstellungen gem&auml;&szlig; oben stehender Tabelle vornehmen
+      </p>
+
+      <p><strong>Hinweis:</strong><br />
+        Die Routenberechnung befindet sich im Status "Erprobung" und kann in einigen F&auml;llen inkorrekt oder unzureichend sein.<br />
+        Jede Routenberechnung sollte deshalb durch den Benutzer&nbsp;kritisch gepr&uuml;ft werden.<br />
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/Routing-Trenner-4.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+    </div>
+
+    <div id="footer">
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2013/09/08</h5>
+    </div>
+
+  </body>
+</html>

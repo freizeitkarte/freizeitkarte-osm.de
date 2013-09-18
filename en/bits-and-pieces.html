@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+  <head>
+    <title>Freizeitkarte - Bits and Pieces</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <link href="../design-1.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+    <div id="title">
+      <h3 style="text-align: center;">Freizeitkarte - Bits and Pieces</h3>
+    </div>
+
+    <div id="left">
+      <p> <a href="./index.html">Overview</a> <br />
+        <a href="./release.html">Release</a> <br />
+        <a href="./installation.html">Installation</a> <br />
+        <a href="./germany.html">Germany</a> <br />
+        <a href="./poland.html">Poland</a> <br />
+        <a href="./austria.html">Austria</a> <br />
+        <a href="./switzerland.html">Switzerland</a> <br />
+        <a href="./france.html">France</a> <br />
+        <a href="./luxembourg.html">Luxembourg</a> <br />
+        <a href="./sweden.html">Sweden</a> <br />
+        <a href="./more-countries.html">More Countries</a> <br />
+        <a href="./plus-countries.html">Plus Countries</a> <br />
+        <a href="./regions.html">Regions</a> <br />
+        <a href="./maplegend.html">Map legend</a> <br />
+        <a href="./design.html">Design</a> <br />
+        <a href="./indexsearch.html">Indexsearch</a> <br />
+        <a href="./routing.html">Routing</a> <br />
+        <a href="./development.html">Development</a> <br />
+        Bits and Pieces<br />
+        <a href="./call-for-help.html">Call for Help</a> <br />
+        <a href="./imprint.html">Donation<br />
+        Imprint</a> 
+      </p>
+    </div>
+
+    <div id="content">
+
+      <p>&nbsp;
+      </p>
+
+      <h3><img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/Sylt-Trenner-1.jpg" /><br /></h3>
+
+      <p>&nbsp;
+      </p>
+
+      <h3>Known Issues</h3>
+
+      <p><strong>Order of rendering lines:</strong><br />
+        The order in which lines are rendered can (sadly) not be changed
+        and is therefore random. This means that with overlapping or
+        crossing lines it is not possible to define which line is on top
+        and which line goes below. This may lead to unwanted effects, e.
+        g. bridges over a river may seem interrupted by a gap. This gap
+        exists in the rendering because the river line goes on top of
+        the bridge line. Routing is not effected through this. 
+      </p>
+
+      <p><strong>Colors and contrast:</strong><br />
+        The design was created with rather "pale" colors and an
+        "average" contrast. Road, paths and many important symbols are
+        displayed more distinctly. The overall design follows the Mapnik
+        style of OpenStreetMap 
+      </p>
+
+      <p><strong>Printing using BaseCamp on OS X:</strong><br />
+        While printing a map using BaseCamp on OS X (Mac) symbols are
+        turned by 180 degrees and additionally mirrored. With BaseCamp
+        on windows this does not happen<br />
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img alt="" src="../images/Noerdlichster-Punkt.jpg" border="1" height="600" width="800" /><br />
+      <small>Map representation in BaseCamp: The northernmost point of Germany - (called elbow) the north end of the island of Sylt to 0m altitude.<br />
+      Good to see the last dunes Germany - which are shifting the way around 3-7 meters per year to the east.</small>
+
+      <p>&nbsp;
+      </p>
+
+      <h3>Planed improvements, user requests</h3>
+
+      <p><strong>Detail improvements</strong>:<br />
+        - Allow for tunnels in the course of a river<br />
+        - display cycle path which run on roads<br />
+        - general improvements of routing 
+      </p>
+
+      <p><strong>User requests:</strong><br />
+      - Display of agriculturally used areas (fields)<br />
+      - Display of hiking paths of the hiking club<br />
+      - Display bakeries with a more concise signature<br />
+      - a designated signature for car parks (public or private)<br />
+      - further differentiation of field- and forest paths<br />
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img alt="" src="../images/Suedlichster-Punkt.jpg" border="1" height="600" width="800" /><br />
+      <small>Map representation in BaseCamp: The southernmost point of Germany marked by the state boundary markers No. 147 1883m altitude.</small>
+
+      <p>&nbsp;
+      </p>
+
+      <h3>Tips and tricks</h3>
+
+      <p><strong>Symbols of public transportation:</strong><br />
+        Especially for passengers of public transportation the symbols
+        of train stations, bus stops and subway stations are displayed
+        concisely. It is possible to prevent these symbols from being
+        displayed. Therefore you have to deactivate the following
+        display settings:<br />
+        Hide Map Features -&gt; Transportation -&gt; Ground
+        Transportation <br />
+        Hide Map Features -&gt; Transportation -&gt; Transit Service 
+      </p>
+
+      <p><strong>Symbols for places of worship:</strong><br />
+        Religious places like churches, mosques and synagogues are
+        usually significant and well known points for orientation. The
+        symbols for these places are concise. It is possible to prevent
+        these symbols from being displayed. Therefore you have to
+        deactivate the following display settings:<br />
+        Hide Map Features -&gt; Community -&gt; Place of Worship 
+      </p>
+
+      <p><strong>Symbols for banks / ATMs:</strong><br />
+        "Leisure time is expensive" - therefore the symbol for ATMs is
+        concise. It is possible to prevent these symbols from being
+        displayed. Therefore you have to deactivate the following
+        display settings:<br />
+        Hide Map Features -&gt; Bank/ATM 
+      </p>
+
+      <p><strong>Visibility of POIs on your GPS device:</strong><br />
+        Many POIs are only visible on maximum zoom. From the viewpoint
+        of clarity this is a good feature. But with a GPS device you may
+        not want to see more POIs in other zooming levels. Many GPS
+        devices provide settings for customizing the level for which
+        POIs are being displayed. E. g. on a Dakota-20 you find these
+        settings here:<br />
+        Setup -&gt; Map -&gt; Advanced Map Setup -&gt; Zoom Levels -&gt;
+        Map Points 
+      </p>
+
+      <p><strong> Elevation lines:</strong><br />
+        Elevation lines provide important additional information for
+        mountainous areas, where on plain area these may be bothersome.
+        It is possible to prevent these lines from being displayed.<br />
+        Hide Map Features -&gt; Contour -&gt; Topographic 
+      </p>
+
+      <p><strong>BaseCamp on a Mac with OS X:</strong><br />
+        If you want to use the Freizeitkarte maps on your Mac you have
+        to install the App BaseCamp from the App Store (or Garmin).
+        Additionally the programms MapManager and MapInstall (Garmin)
+        are required. The actual installation of the Freizeitkarte map
+        is done by MapManager. All files ending with ".gmap" will be
+        linked to MapManager - double click on a gmap file and it will
+        be installed. MapInstall loads a map (or part of it) on your GPS
+        device or an external data storage such as a micro SD card. If
+        you want to see every feature of the map it is recommended to
+        set the "Details" slider to max.
+      </p>
+
+      <p> <strong>3D maps:</strong><br />
+        Display of this map as a 3D map is not supported. The
+        corresponding settings on your GPS device should be set to
+        "off". If not, this may lead to an unintentional darkening of
+        the map.<br />
+      </p>
+
+      <p><strong>More than one active map on a GPS-device:</strong><br />
+        On your GPS device there should only be one map active. If not,
+        this may lead to overlapping at the edges which cases issues
+        with the display (missing or not matching map elements). 
+      </p>
+
+      <p><strong>Hiking paths (tip by Günter from Fürth):</strong><br />
+        If you want hiking paths of the hiking clubs, cycle routes or
+        public transportation as an overlay in addition to the
+        Freizeitkarte you can download the respective img file(s) under
+        this link <a href="http://osm.thkukuk.de/">http://osm.thkukuk.de/</a>.
+        You also find a description on how to load them on your Garmin
+        device and activate in the profile of the Freizeitkarte map.<br />
+        With older Garmin devices that only allow a single img file
+        named gmapsupp.img you have to merge the Freizeitkarte and the
+        respective layer using the tool gmaptool, also described under <a href="http://osm.thkukuk.de/#installation">http://osm.thkukuk.de/#installation</a>.<br />
+      </p>
+
+      <p><b>Device and map management:</b><br />
+        Advisable in connection with maps and GPS devices are some freeware tools from <a href="http://www.javawa.nl/">JaVaWa</a>.
+         With "JaVaWa Device Manager" you can manage the GPS device. E.g. you can make backups, save owner informations,
+         or prevent the automatic loading of maps in Basecamp. Quite similar is "JaVaWa GMTK", which lets you
+         manage your installed maps in Basecamp. Also interesting for Mac users is the utility "CleanEject" which ensures
+         that all trashed objects are deleted before you eject the SD-card.<br />
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/Sylt-Trenner-4.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+    </div>
+
+    <div id="footer">
+      <h5 style="text-align: center;">© freizeitkarte-osm.de - 2013/09/14</h5>
+    </div>
+ 
+  </body>
+</html>
