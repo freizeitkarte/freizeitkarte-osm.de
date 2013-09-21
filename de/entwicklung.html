@@ -75,12 +75,12 @@
       <p>&nbsp;
       </p>
 
-      <p><strong>Workflow zur Erstellung einer Freizeitkarte (Beispiel: Freizeitkarte_Hamburg):</strong></p>
+      <p><strong>Workflow zur Erstellung einer Freizeitkarte (Beispiel: Freizeitkarte_HAMBURG):</strong></p>
 
       <p>1. create:<br />
         - L&ouml;schen von "alten" Daten<br />
         - Neuanlegen von erforderlichen Verzeichnissen<br />
-        - Kommando: <strong>perl mt.pl create Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>&nbsp;
@@ -95,20 +95,20 @@
         - Laden der OSM-Kartendaten f&uuml;r das Bundesland Hamburg<br />
         - Datenquelle: OSM-Extrakt von geofabrik<br />
         - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
-        - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>2b. fetch_ele:<br />
         - Laden der H&ouml;hendaten (elevations) f&uuml;r das Bundesland Hamburg<br />
         - Datenquelle: www.freizeitkarte-osm.de<br />
         - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
-        - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p> 3. join:<br />
         - Zusammenf&uuml;hren der Karten- und H&ouml;hendaten<br />
         - auch erforderlich wenn nur Kartendaten verarbeitet werden sollen<br />
-        - Kommando: <strong>perl mt.pl join Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
       </p>
       
       <p>&nbsp;
@@ -121,13 +121,13 @@
 
       <p> 4. split:<br />
         - Aufteilen (split) der OSM-Daten in Kacheln<br />
-        - Kommando: <strong>perl mt.pl split Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>5. build:<br />
         - Erzeugen einer individuellen Konfigurationsdatei<br />
         - Erzeugen aller Karten-Images (img, mdx, tdb)<br />
-        - Kommando: <strong>perl mt.pl build Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>&nbsp;
@@ -141,7 +141,7 @@
       <p>6. gmap:<br />
         - Erzeugen eines individuellen TYP-Files<br />
         - Erzeugen einer gmap-Datei zur Installation unter OS X ("Garmin MapManager")<br />
-        - Kommando: <strong>perl mt.pl gmap Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>6. nsis:<br />
@@ -149,12 +149,12 @@
         - Erzeugen einer Input-Datei f&uuml;r den NSIS-Compiler<br />
         - Erzeugen einer ausf&uuml;hrbaren Windows-Installerdatei<br />
         - dieser Schritt mu&szlig; unter Windows ausgef&uuml;hrt werden<br />
-        - Kommando: <strong>perl mt.pl nsis Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>6. gmapsupp.img:<br />
         - Erzeugen eines gmapsupp-Image-Datei<br />
-        - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_Hamburg</strong>
+        - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>&nbsp;
@@ -181,11 +181,11 @@ perl mt.pl [-ram=Value] [-cores=Value] [-ele=Value] [-typfile="filename"] [-lang
   perl mt.pl -? | -h
 
 Examples:
-perl mt.pl                              build     Freizeitkarte_Hamburg
-perl mt.pl  -ram=1536    -cores=2       build     Freizeitkarte_Hamburg
+perl mt.pl                              build     Freizeitkarte_HAMBURG
+perl mt.pl  -ram=1536    -cores=2       build     Freizeitkarte_HAMBURG
 perl mt.pl  -ram=6000                   build     5815
 perl mt.pl  -ram=6000    -cores=max     build     5815
-perl mt.pl  -ram=6000    -cores=max     build     Freizeitkarte_Oesterreich  DT36ROUTING
+perl mt.pl  -ram=6000    -cores=max     build     Freizeitkarte_AUT  DT36ROUTING
 
 Options:
 -ram      = javaheapsize in MB (join, split, build) (default = 1536)
@@ -270,7 +270,7 @@ ID = Code = Map  (default language):
 
       <p><strong>Vorbedingungen:</strong><br />
         - Perl (5.10) mu&szlig; installiert sein<br />
-        - Java (1.6) mu&szlig; installiert sein<br />
+        - Java (1.7) mu&szlig; installiert sein<br />
         - mindestens 2 GB Hauptspeicher
       </p>
 
