@@ -77,7 +77,13 @@
 
       <p><strong>Workflow zur Erstellung einer Freizeitkarte (Beispiel: Freizeitkarte_HAMBURG):</strong></p>
 
-      <p>1. create:<br />
+        <p>1. bootstrap:<br />
+        - Komplettieren der Entwicklungsumgebung<br />
+        - Laden der bounds- und sea-Dateien<br />
+        - Kommando: <strong>perl mt.pl bootstrap Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>2. create:<br />
         - L&ouml;schen von "alten" Daten<br />
         - Neuanlegen von erforderlichen Verzeichnissen<br />
         - Kommando: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
@@ -91,26 +97,26 @@
       <p>&nbsp;
       </p>
 
-      <p> 2a. fetch_osm:<br />
+      <p> 3a. fetch_osm:<br />
         - Laden der OSM-Kartendaten f&uuml;r das Bundesland Hamburg<br />
         - Datenquelle: OSM-Extrakt von geofabrik<br />
         - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
         - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>2b. fetch_ele:<br />
+      <p>3b. fetch_ele:<br />
         - Laden der H&ouml;hendaten (elevations) f&uuml;r das Bundesland Hamburg<br />
         - Datenquelle: www.freizeitkarte-osm.de<br />
         - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
         - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p> 3. join:<br />
+      <p> 4. join:<br />
         - Zusammenf&uuml;hren der Karten- und H&ouml;hendaten<br />
         - auch erforderlich wenn nur Kartendaten verarbeitet werden sollen<br />
         - Kommando: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
       </p>
-      
+
       <p>&nbsp;
       </p>
 
@@ -119,12 +125,12 @@
       <p>&nbsp;
       </p>
 
-      <p> 4. split:<br />
+      <p> 5. split:<br />
         - Aufteilen (split) der OSM-Daten in Kacheln<br />
         - Kommando: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>5. build:<br />
+      <p>6. build:<br />
         - Erzeugen einer individuellen Konfigurationsdatei<br />
         - Erzeugen aller Karten-Images (img, mdx, tdb)<br />
         - Kommando: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
@@ -138,13 +144,13 @@
       <p>&nbsp;
       </p>
 
-      <p>6. gmap:<br />
+      <p>7a. gmap:<br />
         - Erzeugen eines individuellen TYP-Files<br />
         - Erzeugen einer gmap-Datei zur Installation unter OS X ("Garmin MapManager")<br />
         - Kommando: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>6. nsis:<br />
+      <p>7b. nsis:<br />
         - Erzeugen eines individuellen TYP-Files<br />
         - Erzeugen einer Input-Datei f&uuml;r den NSIS-Compiler<br />
         - Erzeugen einer ausf&uuml;hrbaren Windows-Installerdatei<br />
@@ -152,7 +158,7 @@
         - Kommando: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>6. gmapsupp.img:<br />
+      <p>7c. gmapsupp.img:<br />
         - Erzeugen eines gmapsupp-Image-Datei<br />
         - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
       </p>
@@ -282,7 +288,7 @@ ID = Code = Map  (default language):
       <p><strong>Empfehlungen zur Erzeugung einer Karte f&uuml;r Deutschland:</strong><br />
         - leistungsstarke Mehr-Kern-CPU<br />
         - Java-Virtual-Machine mit 64bit<br />
-        - je benutztem Prozessorkern sollte mindestens 1 GB RAM zur Verf&uuml;gung stehen
+        - je benutztem Prozessorkern sollte mindestens 2 GB RAM zur Verf&uuml;gung stehen
       </p>
 
       <p><strong>Anmerkung:</strong><br />
@@ -303,7 +309,7 @@ ID = Code = Map  (default language):
         - KULTURLAND: Darstellung von Ackerfl&auml;chen [polygons-master]<br />
         <br />
       </p>
- 
+
       <p>&nbsp;
       </p>
 
@@ -312,9 +318,9 @@ ID = Code = Map  (default language):
       <p>&nbsp;
       </p>
 
-      <h3>Freizeitkarte Entwicklungsumgebung - Ausgabe 13.09 (0.5 GB)</h3>
+      <h3>Freizeitkarte Entwicklungsumgebung - Ausgabe 13.11 (ca. 0.5 GB)</h3>
 
-      <p><a href="http://download.freizeitkarte-osm.de/Development/1309/Freizeitkarte-Entwicklung.zip">Download</a>
+      <p><a href="http://download.freizeitkarte-osm.de/Development/1311/Freizeitkarte-Entwicklung.zip">Download</a>
       </p>
 
       <p>&nbsp;
@@ -328,7 +334,7 @@ ID = Code = Map  (default language):
     </div>
 
     <div id="footer">
-      <h5 style="text-align: center">© freizeitkarte-osm.de - 2013/09/08</h5>
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2013/10/27</h5>
     </div>
 
   </body>

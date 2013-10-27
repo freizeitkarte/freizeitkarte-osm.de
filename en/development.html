@@ -35,7 +35,7 @@
         <a href="./bits-and-pieces.html">Bits and Pieces</a> <br />
         <a href="./call-for-help.html">Call for Help</a> <br />
         <a href="./imprint.html">Donation<br />
-        Imprint</a> 
+        Imprint</a>
       </p>
     </div>
 
@@ -49,7 +49,7 @@
       <p>&nbsp;
       </p>
 
-      <p>Everybody is invited to build ... an own map. This can be interesting for the following reasons: 
+      <p>Everybody is invited to build ... an own map. This can be interesting for the following reasons:
       </p>
 
       <ol>
@@ -84,10 +84,17 @@
       <p><strong>Build-Workflow (Example: Freizeitkarte_HAMBURG):</strong>
       </p>
 
-      <p>1. create:<br />
+         <p>1. bootstrap:<br />
+        - Complete the build-environment<br />
+        - Download of bounds- und sea-files<br />
+        - Command: <strong>perl mt.pl bootstrap Freizeitkarte_HAMBURG</strong>
+      </p>
+
+
+      <p>2. create:<br />
         - Delete old data<br />
         - Create necessary new directories<br />
-        - Command Lines: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong> 
+        - Command Lines: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
       </p>
 
       <p>&nbsp;
@@ -98,21 +105,21 @@
       <p>&nbsp;
       </p>
 
-      <p>2a. fetch_osm:<br />
+      <p>3a. fetch_osm:<br />
         - Loading the OSM map data for the state of Hamburg<br />
         - Data source: OSM extract from geofabrik<br />
         - The download is done via "curl" (OS X) or "wget" (Windows)<br />
         - Command: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>2b. fetch_ele:<br />
+      <p>3b. fetch_ele:<br />
         - Loading the elevation data for the State of Hamburg<br />
         - Data source: www.freizeitkarte-osm.de<br />
         - The download is done via "curl" (OS X) or "wget" (Windows)<br />
         - Command: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>3. join:<br />
+      <p>4. join:<br />
         - Joining map and elevation data<br />
         - Even if only map data needed to be processed<br />
         - Command: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
@@ -126,12 +133,12 @@
       <p>&nbsp;
       </p>
 
-      <p>4. split:<br />
+      <p>5. split:<br />
         - Splitting of the OSM data into tiles<br />
         - Command: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>5. build:<br />
+      <p>6. build:<br />
         - Generating an individual configuration file<br />
         - Generating all map images (img, mdx, tdb)<br />
         - Command: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
@@ -146,13 +153,13 @@
       <p>&nbsp;
       </p>
 
-      <p>6. gmap:<br />
+      <p>7a. gmap:<br />
         - Generating an individual TYP-file<br />
         - Generating a gmap file to install on OS X ("Garmin MapManager")<br />
         - Command: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>6. nsis:<br />
+      <p>7b. nsis:<br />
         - Generating an individual TYP-file<br />
         - Generating a input file for the NSIS compiler<br />
         - Generating a Windows zipcutable installer file<br />
@@ -160,7 +167,7 @@
         - Command: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>6. gmapsupp.img:<br />
+      <p>7c. gmapsupp.img:<br />
         - Generating a Garmin image file<br />
         - Command: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
       </p>
@@ -289,7 +296,7 @@ ID = Code = Map  (default language):
       <p><strong>Recommendations for generating a map of Germany:</strong><br />
         - Powerful multi-core CPU<br />
         - Java Virtual Machine with 64bit<br />
-        - For each used processor core should be at least 1 GB of RAM available
+        - For each used core at least 2 GB of RAM are necessary
       </p>
 
       <p><strong>Note:</strong><br />
@@ -318,9 +325,9 @@ ID = Code = Map  (default language):
       <p>&nbsp;
       </p>
 
-      <h3> Freizeitkarte development environment - Release 13.09 (0.5 GB)</h3>
+      <h3> Freizeitkarte development environment - Release 13.11 (0.5 GB)</h3>
 
-      <p><strong><a href="http://download.freizeitkarte-osm.de/Development/1309/Freizeitkarte-Entwicklung.zip">Download</a></strong> 
+      <p><strong><a href="http://download.freizeitkarte-osm.de/Development/1311/Freizeitkarte-Entwicklung.zip">Download</a></strong>
       </p>
 
       <p>&nbsp;
@@ -334,7 +341,7 @@ ID = Code = Map  (default language):
     </div>
 
     <div id="footer">
-      <h5 style="text-align: center">© freizeitkarte-osm.de - 2013/09/11</h5>
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2013/10/27</h5>
     </div>
 
   </body>
