@@ -187,20 +187,25 @@
       </p>
 
      <pre><span style="color: rgb(0,0,205)">
-mt.pl - Map Tool for creating Garmin maps, 1.3.3 - 2013/09/04
+mt.pl - Map Tool for creating Garmin maps, 1.3.5 - 2014/01/07
 
 Usage:
-perl mt.pl [-ram=Value] [-cores=Value] [-ele=Value] [-typfile="filename"] [-language="lang"] &lt;Action&gt; &lt;ID | Code | Map&gt; [PPO] ... [PPO]
+perl mt.pl [-ram=&lt;value>] [-cores=&lt;value&gt;] [-ele=&lt;value&gt;] [-typfile="&lt;filename&gt;"] [-language="&lt;lang&gt;"] &lt;Action&gt; &lt;ID&gt; | &lt;Code&gt; | &lt;Map&gt; [PPO] ... [PPO]
+  or
+perl mt.pl bootstrap [urls &lt;url_bounds&gt; &lt;url_sea&gt;]
+perl mt.pl bootstrap list
 
   or for getting help:
   perl mt.pl -? | -h
 
+
 Examples:
-perl mt.pl                              build     Freizeitkarte_HAMBURG
-perl mt.pl  -ram=1536    -cores=2       build     Freizeitkarte_HAMBURG
+perl mt.pl                              bootstrap
+perl mt.pl                              build     Freizeitkarte_Hamburg
+perl mt.pl  -ram=1536    -cores=2       build     Freizeitkarte_Hamburg
 perl mt.pl  -ram=6000                   build     5815
 perl mt.pl  -ram=6000    -cores=max     build     5815
-perl mt.pl  -ram=6000    -cores=max     build     Freizeitkarte_AUT DT36ROUTING
+perl mt.pl  -ram=6000    -cores=max     build     Freizeitkarte_Oesterreich  DT36ROUTING
 
 Options:
 -ram      = javaheapsize in MB (join, split, build) (default = 1536)
@@ -219,6 +224,7 @@ Code      = Code of the to processed map
 Map       = Name of the to be processed map
 
 Actions:
+bootstrap  =     Complete the Environment with needed downloads (boundaries)
 create     = 1.  (re)create all directories
 fetch_osm  = 2a. fetch osm data from url
 fetch_ele  = 2b. fetch elevation data from url
@@ -247,17 +253,17 @@ ID = Code = Map  (default language):
 5823 = SACHSEN-ANHALT             = Freizeitkarte_SACHSEN-ANHALT                      (de)
 5824 = SCHLESWIG-HOLSTEIN         = Freizeitkarte_SCHLESWIG-HOLSTEIN                  (de)
 5825 = THUERINGEN                 = Freizeitkarte_THUERINGEN                          (de)
+6040 = AUT                        = Freizeitkarte_AUT                                 (de)
 6056 = BEL                        = Freizeitkarte_BEL                                 (en)
+6756 = CHE                        = Freizeitkarte_CHE                                 (de)
+6203 = CZE                        = Freizeitkarte_CZE                                 (en)
 6208 = DNK                        = Freizeitkarte_DNK                                 (en)
 6276 = DEU                        = Freizeitkarte_DEU                                 (de)
 6250 = FRA                        = Freizeitkarte_FRA                                 (en)
 6442 = LUX                        = Freizeitkarte_LUX                                 (en)
 6528 = NLD                        = Freizeitkarte_NLD                                 (en)
-6040 = AUT                        = Freizeitkarte_AUT                                 (de)
 6616 = POL                        = Freizeitkarte_POL                                 (en)
 6752 = SWE                        = Freizeitkarte_SWE                                 (en)
-6756 = CHE                        = Freizeitkarte_CHE                                 (de)
-6203 = CZE                        = Freizeitkarte_CZE                                 (en)
      </pre>
 
       <p>&nbsp;
@@ -341,7 +347,7 @@ ID = Code = Map  (default language):
     </div>
 
     <div id="footer">
-      <h5 style="text-align: center">© freizeitkarte-osm.de - 2014/01/16</h5>
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2014/01/18</h5>
     </div>
 
   </body>
