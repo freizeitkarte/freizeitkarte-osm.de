@@ -1,0 +1,110 @@
+/* design-1 - cascading style sheet (css) */
+
+
+body {
+  font-family: luxi sans, trebuchet ms, bitstream vera sans, sans-serif;
+  background-color: #eeeeee;
+  color: #555753;
+}
+
+p.programmcode {
+  font-family: bitstream vera sans mono, monospace;
+  color: #a40000;
+  font-size: 90%;
+}
+
+/* Links */
+
+a.extern:link, a.extern:visited, a.extern:active, a.extern:hover
+{
+  background: url(images/external.png) center right no-repeat;
+  padding-right: 13px;
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a.extern:active, a.extern:hover
+{
+   text-decoration: underline;
+}
+
+a:link, a:visited, a:active, a:hover
+{
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a:active, a:hover
+{
+   text-decoration: underline;
+}
+
+/* Seitenstruktur */
+        
+#title {
+  border-bottom: 1px dotted #555753;
+  font-family: luxi serif, georgia, times new roman, times, serif;
+  color: #555555;
+  font-size: 110%;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  float: left;
+}
+
+#left {
+  width: 14%;
+  margin-left: 1%;
+  float: left;
+  line-height: 2.0em;
+  font-size: 90%;
+}
+
+#content {
+  width: 84%;
+  margin-right: 1%;
+  float: left;
+}	
+        
+#footer {
+  border-top: 1px dotted #555753;
+  font-family: luxi serif, georgia, times new roman, times, serif;
+  font-size: 80%;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+  float: left;
+}
+
+/* Tabellen */
+
+table {
+  border: 1px dotted #555753;
+  /* border: none; */
+  cellpadding: 0;
+  cellspacing: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+table.style2 {
+  /* border: 1px dotted #555753; */
+  border: none;
+  text-align: center;
+}
+
+th {
+  /* border: 1px dotted #555753; */
+  border: none;
+  background-color: #b0c69b;
+}
+
+td {
+  /* border: 1px dotted #555753; */
+  border: none;
+}
+
+tr.zeilenfarbe {
+  background-color: #d3d7cf;
+}
+                    
