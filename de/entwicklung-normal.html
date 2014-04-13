@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+    <title>Freizeitkarte - Entwicklung einer individuellen Karte - Existierendes Extrakt</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../design-1.css" />
+  </head>
+
+  <body>
+
+    <div id="title">
+      <h3 style="text-align: center">Freizeitkarte - Entwicklung einer individuellen Karte - Existierendes Extrakt</h3>
+    </div>
+
+    <div id="left">
+      <p> <a href="./index.html">&Uuml;berblick</a><br />
+        <a href="./ausgabe.html">Ausgabe</a><br />
+        <a href="./installation.html">Installation</a><br />
+        <a href="./deutschland.html">Deutschland</a><br />
+        <a href="./polen.html">Polen</a><br />
+        <a href="./oesterreich.html">&Ouml;sterreich</a><br />
+        <a href="./schweiz.html">Schweiz</a><br />
+        <a href="./frankreich.html">Frankreich</a><br />
+        <a href="./luxemburg.html">Luxemburg</a><br />
+        <a href="./schweden.html">Schweden</a><br />
+        <a href="./weitere-laender.html">Weitere L&auml;nder</a><br />
+        <a href="./plus-laender.html">Plusl&auml;nder</a><br />
+        <a href="./regionen.html">Regionen</a><br />
+        <a href="./legende.html">Legende</a><br />
+        <a href="./design.html">Design</a><br />
+        <a href="./indexsuche.html">Indexsuche</a><br />
+        <a href="./routing.html">Routing</a><br />
+        Entwicklung<br />
+        <a href="./dies-und-das.html">Dies-Und-Das</a><br />
+        <a href="./hilf-mit.html">Hilf mit!</a><br />
+        <a href="./impressum.html">Spende<br />
+        Impressum</a>
+      </p>
+    </div>
+
+    <div id="content">
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-1.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+      <p><strong>Workflow zur Erstellung einer Freizeitkarte basierend auf einem existierenden Extrakt (Beispiel: Freizeitkarte_HAMBURG):</strong></p>
+
+        <p>1. bootstrap:<br />
+        - (Einmaliges) Komplettieren der Entwicklungsumgebung<br />
+        - Laden der bounds- und sea-Dateien<br />
+        - Kommando: <strong>perl mt.pl bootstrap</strong>
+      </p>
+
+      <p>2. create:<br />
+        - L&ouml;schen von "alten" Daten<br />
+        - Neuanlegen von erforderlichen Verzeichnissen<br />
+        - Kommando: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 190px;" src="./../images/FZK-Workflow-1.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p> 3a. fetch_osm:<br />
+        - Laden der OSM-Kartendaten f&uuml;r das Bundesland Hamburg<br />
+        - Datenquelle: OSM-Extrakt von geofabrik<br />
+        - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
+        - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>3b. fetch_ele:<br />
+        - Laden der H&ouml;hendaten (elevations) f&uuml;r das Bundesland Hamburg<br />
+        - Datenquelle: www.freizeitkarte-osm.de<br />
+        - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
+        - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p> 4. join:<br />
+        - Zusammenf&uuml;hren der Karten- und H&ouml;hendaten<br />
+        - auch erforderlich wenn nur Kartendaten verarbeitet werden sollen<br />
+        - Kommando: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-2.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p> 5. split:<br />
+        - Aufteilen (split) der OSM-Daten in Kacheln<br />
+        - Kommando: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>6. build:<br />
+        - Erzeugen einer individuellen Konfigurationsdatei<br />
+        - Erzeugen aller Karten-Images (img, mdx, tdb)<br />
+        - Kommando: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-3.jpg" alt="" />
+
+      <p>&nbsp;
+      </p>
+
+      <p>7a. gmap:<br />
+        - Erzeugen eines individuellen TYP-Files<br />
+        - Erzeugen einer gmap-Datei zur Installation unter OS X ("Garmin MapManager")<br />
+        - Kommando: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>7b. nsis:<br />
+        - Erzeugen eines individuellen TYP-Files<br />
+        - Erzeugen einer Input-Datei f&uuml;r den NSIS-Compiler<br />
+        - Erzeugen einer ausf&uuml;hrbaren Windows-Installerdatei<br />
+        - dieser Schritt mu&szlig; unter Windows ausgef&uuml;hrt werden<br />
+        - Kommando: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>7c. gmapsupp.img:<br />
+        - Erzeugen eines gmapsupp-Image-Datei<br />
+        - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
+      </p>
+
+      <p>&nbsp;
+      </p>
+
+      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-6.jpg" />
+
+      <p>&nbsp;
+      </p>
+
+    </div>
+
+    <div id="footer">
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2014/01/26</h5>
+    </div>
+
+  </body>
+</html>
