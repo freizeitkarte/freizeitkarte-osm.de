@@ -49,10 +49,12 @@
       <p>&nbsp;
       </p>
 
-      <p><strong>Workflow zur Erstellung einer Freizeitkarte basierend auf selbst zugeschnittenen Extrakten (Beispiel: Freizeitkarte_HAMBURG):</strong></p>
+      <p><strong>Workflow zur Erstellung einer Freizeitkarte basierend auf selbst zugeschnittenen Extrakten (Beispiel: Freizeitkarte_DEU+):</strong></p>
 	  
 	  {Natürlich noch nicht korrekt und nicht komplett}
-
+	  
+      <p>Komplettierung der Entwicklungsumgebung und Vorbereitung der Verzeichnisse:</p>
+	  
         <p>1. bootstrap:<br />
         - (Einmaliges) Komplettieren der Entwicklungsumgebung<br />
         - Laden der bounds- und sea-Dateien<br />
@@ -60,9 +62,12 @@
       </p>
 
       <p>2. create:<br />
+	    Diese Aktion sollte auf beide relevanten Regionen ausgeführt werden, die Region, welche unsere gewünschte Karte enthält (meistens EUROPE) und die gewünschte Karte selbst. Die Aktion ist nicht zwingend nötig, die Verzeichnisse werden auch so angelegt, aber mit dieser Aktion werden alte Daten gel&ouml;scht:<br />
         - L&ouml;schen von "alten" Daten<br />
         - Neuanlegen von erforderlichen Verzeichnissen<br />
-        - Kommando: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
+        - Kommando(s): <br />
+		&nbsp;&nbsp;<strong>perl mt.pl create Freizeitkarte_EUROPE</strong><br />
+		&nbsp;&nbsp;<strong>perl mt.pl create Freizeitkarte_DEU+</strong>
       </p>
 
       <p>&nbsp;
@@ -74,23 +79,28 @@
       </p>
 
       <p> 3a. fetch_osm:<br />
-        - Laden der OSM-Kartendaten f&uuml;r das Bundesland Hamburg<br />
+        - Laden der OSM-Kartendaten f&uuml;r die Region, welche unsere gewünschte Karte enthält, meistens EUROPE<br />
         - Datenquelle: OSM-Extrakt von geofabrik<br />
         - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
-        - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_EUROPE</strong>
       </p>
 
-      <p>3b. fetch_ele:<br />
-        - Laden der H&ouml;hendaten (elevations) f&uuml;r das Bundesland Hamburg<br />
+      <p> 3b. extract_osm:<br />
+        - Zuschneiden der heruntergeladenen OSM Daten auf die gewünschte Grösse/Karte<br />
+        - Kommando: <strong>perl mt.pl extract_osm Freizeitkarte_DEU+</strong>
+      </p>
+
+      <p>3c. fetch_ele:<br />
+        - Laden der H&ouml;hendaten (elevations) f&uuml;r die gewünschte Karte, in unserem Beispiel DEU+<br />
         - Datenquelle: www.freizeitkarte-osm.de<br />
         - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
-        - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_DEU+</strong>
       </p>
 
       <p> 4. join:<br />
         - Zusammenf&uuml;hren der Karten- und H&ouml;hendaten<br />
         - auch erforderlich wenn nur Kartendaten verarbeitet werden sollen<br />
-        - Kommando: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl join Freizeitkarte_DEU+</strong>
       </p>
 
       <p>&nbsp;
@@ -103,13 +113,13 @@
 
       <p> 5. split:<br />
         - Aufteilen (split) der OSM-Daten in Kacheln<br />
-        - Kommando: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl split Freizeitkarte_DEU+</strong>
       </p>
 
       <p>6. build:<br />
         - Erzeugen einer individuellen Konfigurationsdatei<br />
         - Erzeugen aller Karten-Images (img, mdx, tdb)<br />
-        - Kommando: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl build Freizeitkarte_DEU+</strong>
       </p>
 
       <p>&nbsp;
@@ -123,7 +133,7 @@
       <p>7a. gmap:<br />
         - Erzeugen eines individuellen TYP-Files<br />
         - Erzeugen einer gmap-Datei zur Installation unter OS X ("Garmin MapManager")<br />
-        - Kommando: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl gmap Freizeitkarte_DEU+</strong>
       </p>
 
       <p>7b. nsis:<br />
@@ -131,15 +141,20 @@
         - Erzeugen einer Input-Datei f&uuml;r den NSIS-Compiler<br />
         - Erzeugen einer ausf&uuml;hrbaren Windows-Installerdatei<br />
         - dieser Schritt mu&szlig; unter Windows ausgef&uuml;hrt werden<br />
-        - Kommando: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl nsis Freizeitkarte_DEU+</strong>
       </p>
 
       <p>7c. gmapsupp.img:<br />
         - Erzeugen eines gmapsupp-Image-Datei<br />
-        - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
+        - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_DEU+</strong>
       </p>
 
+      <p>7d. ImageDir:<br />
+        - Erzeugen der von Qlandkarte GT (und anderen Anwendungen) lesbaren Verzeichniss Struktur<br />
+        - Kommando: <strong>perl mt.pl imagedir Freizeitkarte_DEU+</strong>
+      </p>
 
+	  
       <p>&nbsp;
       </p>
 
