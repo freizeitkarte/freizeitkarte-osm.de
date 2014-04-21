@@ -5,7 +5,7 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <title>Freizeitkarte - Legende</title>
-    <link href="../design-1.css" rel="stylesheet" type="text/css" />
+    <link href="../design-menue2.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -16,17 +16,21 @@
       </h3>
     </div>
 
-    <div id="left">
-      <p>
-        <a href="./index.html">&Uuml;berblick</a><br />
-        <a href="./allgemeines.html">Allgemeines</a><br />
-        <a href="./laender.html">L&auml;nder</a><br />
-        <a href="./regionen.html">Regionen</a><br />
-        <a href="./design.html">Design/Theme</a><br />
-        Legende<br />
-        <a href="./konfiguration.html">Konfiguration</a><br />
-        <a href="./impressum.html">Spende<br />
-        Impressum</a></p>
+    <div id='cssmenu'>
+      <ul>
+         <li class='active'><a href='./index.html'><span>&Uuml;berblick</span></a></li>
+         <li class='active'><a href='./allgemeines.html'><span>Allgemeines</span></a></li>
+         <li class='has-sub'><a href='#'><span>Karten &darr;</span></a>
+            <ul>
+               <li><a href='./laender.html'><span>L&auml;nder</span></a></li>
+               <li><a href='./regionen.html'><span>Regionen</span></a></li>
+               <li><a href='./design.html'><span>Theme</span></a></li>
+               <li><a href='./legende.html'><span>Legende</span></a></li>
+               <li class='last'><a href='./konfiguration.html'><span>Konfiguration</span></a></li>
+            </ul>
+         </li>
+         <li class='last'><a href='./impressum.html'><span>Impressum</span></a></li>
+      </ul>
     </div>
 
     <div id="content">
@@ -885,7 +889,7 @@
 
     <div id="footer">
       <h5 style="text-align: center;">
-        &copy; freizeitkarte-osm.de - 2014/04/12</h5>
+        &copy; freizeitkarte-osm.de - 2014/04/21</h5>
     </div>
 
   </body>

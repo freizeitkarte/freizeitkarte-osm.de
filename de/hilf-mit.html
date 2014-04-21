@@ -4,7 +4,7 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <title>Freizeitkarte - Hilf-Mit!</title>
-    <link href="../design-1.css" rel="stylesheet" type="text/css" />
+    <link href="../design-menue2.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -13,7 +13,7 @@
       <h3 style="text-align: center;">Freizeitkarte - Hilf-Mit!</h3>
     </div>
 
-    <div id="left">
+<!--    <div id="left">
       <p> <a href="./index.html">&Uuml;berblick</a><br />
         <a href="./ausgabe.html">Ausgabe</a><br />
         <a href="./installation.html">Installation</a><br />
@@ -37,21 +37,58 @@
         <a href="./impressum.html">Spende<br />
         Impressum</a>
       </p>
+    </div>-->
+
+    <div id='cssmenu'>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Start</span></a>
+            <ul>
+               <li><a href='./index.html'><span>&Uuml;berblick</span></a></li>
+               <li><a href='./ausgabe.html'><span>Ausgabe</span></a></li>
+               <li class='last'><a href='./installation.html'><span>Installation</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>L&auml;nder</span></a>
+            <ul>
+               <li><a href='./deutschland.html'><span>Deutschland</span></a></li>
+               <li><a href='./oesterreich.html'><span>&Ouml;sterreich</span></a></li>
+               <li><a href='./schweiz.html'><span>Schweiz</span></a></li>
+               <li><a href='./frankreich.html'><span>Frankreich</span></a></li>
+               <li><a href='./luxemburg.html'><span>Luxemburg</span></a></li>
+               <li><a href='./polen.html'><span>Polen</span></a></li>
+               <li><a href='./schweden.html'><span>Schweden</span></a></li>
+               <li class='last'><a href='./weitere-laender.html'><span>Weitere L&auml;nder</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Bereiche</span></a>
+            <ul>
+               <li><a href='./plus-laender.html'><span>Plusl&auml;nder</span></a></li>
+               <li class='last'><a href='./regionen.html'><span>Regionen</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Allgemeines</span></a>
+            <ul>
+               <li><a href='./legende.html'><span>Legende</span></a></li>
+               <li><a href='./design.html'><span>Design</span></a></li>
+               <li><a href='./indexsuche.html'><span>Indexsuche</span></a></li>
+               <li><a href='./routing.html'><span>Routing</span></a></li>
+               <li><a href='./entwicklung.html'><span>Entwicklung</span></a></li>
+               <li><a href='./dies-und-das.html'><span>Dies-Und-Das</span></a></li>
+               <li class='last'><a href='./hilf-mit.html'><span>Hilf mit!</span></a></li>
+            </ul>
+         </li>
+         <li class='active'><a href='./impressum.html'><span>Impressum</span></a></li>
+         <li class='last'><a href='../en/index.html'><span>English</span></a></li>
+      </ul>
     </div>
+
 
     <div id="content">
 
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/Alster-Trenner-2.jpg" />
-
-      <p>&nbsp;
-      </p>
-
       <h3>Unterst&uuml;tze das Projekt finanziell:</h3>
 
-      <p><strong>Obolus f&uuml;r die Tee-/Kaffeekasse:</strong></p>
+      <p><strong>Obolus f&uuml;r die Tee-/Kaffeekasse:</strong>
+      </p>
 
       <p><img style=" width: 125px; height: 71px; border: 1px solid; float: left; margin-right: 20px; margin-bottom: 10px;" alt="" src="../images/Kaffee-Kuchen.jpg" />
         Wenn du aus den Freizeitkarten etwas Positives f&uuml;r dich ableiten konntest, dann denke doch einmal &uuml;ber eine kleine Unterst&uuml;tzung nach. Betrachte
@@ -75,13 +112,9 @@
         geht immer - und wieviel dies ist, dass bestimmst alleine du selbst ...
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img alt="" src="../images/Tiefster-Punkt.jpg" border="1" height="600" width="800" /><br />
-      <small>Kartendarstellung in BaseCamp: Der tiefste Landpunkt Deutschlands (-3,54 Meter) bei Neuendorf-Sachsenbande.</small><br />
-
-      <p>&nbsp;
+      <p>
+        <img alt="" src="../images/Tiefster-Punkt.jpg" border="1" /><br />
+        <small>Kartendarstellung in BaseCamp: Der tiefste Landpunkt Deutschlands (-3,54 Meter) bei Neuendorf-Sachsenbande.</small><br />
       </p>
 
       <h3>Verbessere die Kartendaten:</h3>
@@ -91,9 +124,7 @@
         Melde dich hierzu auf OpenStreetMap an und versuche es einfach mal. Alle anderen Kartennutzer k&ouml;nnen so von deinem Wissen profitieren.
       </p>
 
-        <p>&nbsp;
-      </p>
-
+      <p>
         <img alt="Screenshot des Online-Editors iD" src="../images/id.jpg" border="1" /><br />
         <small><i>Editieren der Daten mit dem Online-Editor <b>iD</b>. Auf einem irrt&uuml;mlich nur f&uuml;r landwirtschaftlichen Verkehr freigegebenem Feldweg werden Fu&szlig;g&auml;nger und Radfahrer erlaubt.</i></small><br />
         <p>&nbsp;
@@ -103,9 +134,6 @@
 
        <p>Alternativ gibt es auf der OpenStreetMap-Webseite auch die M&ouml;glichkeit, Fehlermarkierungen zu setzen ohne sich vorher registrieren zu m&uuml;ssen.
        Vergiss aber nicht, einmal die Woche nach "deinen" Fehlermeldungen zu schauen - vielleicht gibt es ja R&uuml;ckfragen.
-      </p>
-
-       <p>&nbsp;
       </p>
 
         <img alt="Screenshot der Fehler-melden-Funktion auf der OSM-Webseite" src="../images/report-error.jpg" border="1"/><br />
@@ -118,14 +146,8 @@
       <p>Falls irgend etwas anders funktioniert oder aussieht (oder gar nicht funktioniert), lass' es uns wissen. Nur so k&ouml;nnen wir den Sachverhalt pr&uuml;fen und vielleicht schon mit der n&auml;chsten Kartenausgabe beheben.
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img alt="" src="../images/Hoechster-Punkt.jpg" border="1" height="600" width="800" /><br />
+      <img alt="" src="../images/Hoechster-Punkt.jpg" border="1" /><br />
       <small>Kartendarstellung in BaseCamp: Die Zugspitze - der h&ouml;chste Landpunkt Deutschlands (2962 Meter).</small><br />
-
-      <p>&nbsp;
-      </p>
 
       <h3>Du hast eine Spezialkarte abgeleitet:</h3>
 
@@ -140,19 +162,12 @@
         abzuleiten. Stelle deine Spezialkarten doch allen Nutzern zur Verf&uuml;gung.
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/Alster-Trenner-3.jpg" />
-
-      <p>&nbsp;
-      </p>
-
     </div>
 
     <div id="footer">
-      <h5 style="text-align: center;">© freizeitkarte-osm.de - 2014/03/24</h5>
+      <h5 style="text-align: center;">© freizeitkarte-osm.de - 2014/04/21</h5>
     </div>
 
   </body>
+
 </html>

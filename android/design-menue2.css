@@ -1,0 +1,210 @@
+/* design-menue - cascading style sheet (css) */
+
+body {
+  font-family: luxi sans, trebuchet ms, bitstream vera sans, sans-serif;
+  background-color: #eeeeee;
+  color: #555753;
+}
+
+p.programmcode {
+  font-family: bitstream vera sans mono, monospace;
+  color: #a40000;
+  font-size: 90%;
+}
+
+/* Links */
+
+a.extern:link, a.extern:visited, a.extern:active, a.extern:hover
+{
+  background: url(./images/external.png) center right no-repeat;
+  padding-right: 13px;
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a.extern:active, a.extern:hover
+{
+  text-decoration: underline;
+}
+
+a:link, a:visited, a:active, a:hover
+{
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a:active, a:hover
+{
+  text-decoration: underline;
+}
+
+/* Seitenstruktur */
+
+#title {
+  /*border-bottom: 1px dotted #555753;*/
+  font-family: luxi serif, georgia, times new roman, times, serif;
+  color: #555753;
+  font-size: 110%;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
+}
+
+#cssmenu {
+  /*margin-top: 14px;*/
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 14px;
+  float: left;
+  /*font-family: luxi serif, georgia, times new roman, times, serif;*/
+  font-size: 110%;
+  border: none;
+  border: 0px;
+  padding: 0px;
+}
+
+#content {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
+}
+
+#footer {
+  border-top: 1px dotted #555753;
+  font-family: luxi serif, georgia, times new roman, times, serif;
+  font-size: 80%;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float: left;
+}
+
+/* Tabellen */
+
+table {
+  border: 1px dotted #555753;
+  /* border: none; */
+  cellpadding: 0;
+  cellspacing: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+table.style2 {
+  /* border: 1px dotted #555753; */
+  border: none;
+  text-align: center;
+}
+
+th {
+  /* border: 1px dotted #555753; */
+  border: none;
+  background-color: #b0c69b;
+}
+
+td {
+  /* border: 1px dotted #555753; */
+  border: none;
+}
+
+tr.zeilenfarbe {
+  background-color: #d3d7cf;
+}
+
+/* CSS-Menue */
+
+#cssmenu ul {
+  background: #555753;
+  height: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#cssmenu li {
+  float: left;
+  padding: 0px;
+}
+
+#cssmenu li a {
+  background: #555753 url('./images/seperator.gif') bottom right no-repeat;
+  display: block;
+  font-weight: normal;
+  line-height: 35px;
+  margin: 0px;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#cssmenu > ul > li > a {
+  color: #eeeeee;
+}
+
+#cssmenu ul ul a {
+  color: #eeeeee;
+}
+
+#cssmenu li > a:hover,
+#cssmenu ul li:hover > a {
+  background: #2580a2 url('./images/hover.png') bottom center no-repeat;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#cssmenu li ul {
+  background: #555753;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 225px;
+  z-index: 200;
+  /*top:1em;
+  /*left:0;*/
+}
+
+#cssmenu li:hover ul {
+  display: block;
+}
+
+#cssmenu li li {
+  background: url('./images/sub_sep.gif') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 225px;
+}
+
+#cssmenu li:hover li a {
+  background: none;
+}
+
+#cssmenu li ul a {
+  display: block;
+  height: 45px;
+  line-height:45px;
+  font-size: 100%;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 15px 0px 15px;
+  text-align: left;
+}
+
+#cssmenu li ul a:hover,
+#cssmenu li ul li:hover > a {
+  background: #2580a2 url('./images/hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#cssmenu p {
+  clear: left;
+}

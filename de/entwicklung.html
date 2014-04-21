@@ -4,7 +4,7 @@
   <head>
     <title>Freizeitkarte - Entwicklung einer individuellen Karte</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link type="text/css" rel="stylesheet" href="../design-1.css" />
+    <link type="text/css" rel="stylesheet" href="../design-menue2.css" />
   </head>
 
   <body>
@@ -13,7 +13,7 @@
       <h3 style="text-align: center">Freizeitkarte - Entwicklung einer individuellen Karte</h3>
     </div>
 
-    <div id="left">
+<!--    <div id="left">
       <p> <a href="./index.html">&Uuml;berblick</a><br />
         <a href="./ausgabe.html">Ausgabe</a><br />
         <a href="./installation.html">Installation</a><br />
@@ -37,17 +37,52 @@
         <a href="./impressum.html">Spende<br />
         Impressum</a>
       </p>
+    </div>-->
+
+    <div id='cssmenu'>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Start</span></a>
+            <ul>
+               <li><a href='./index.html'><span>&Uuml;berblick</span></a></li>
+               <li><a href='./ausgabe.html'><span>Ausgabe</span></a></li>
+               <li class='last'><a href='./installation.html'><span>Installation</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>L&auml;nder</span></a>
+            <ul>
+               <li><a href='./deutschland.html'><span>Deutschland</span></a></li>
+               <li><a href='./oesterreich.html'><span>&Ouml;sterreich</span></a></li>
+               <li><a href='./schweiz.html'><span>Schweiz</span></a></li>
+               <li><a href='./frankreich.html'><span>Frankreich</span></a></li>
+               <li><a href='./luxemburg.html'><span>Luxemburg</span></a></li>
+               <li><a href='./polen.html'><span>Polen</span></a></li>
+               <li><a href='./schweden.html'><span>Schweden</span></a></li>
+               <li class='last'><a href='./weitere-laender.html'><span>Weitere L&auml;nder</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Bereiche</span></a>
+            <ul>
+               <li><a href='./plus-laender.html'><span>Plusl&auml;nder</span></a></li>
+               <li class='last'><a href='./regionen.html'><span>Regionen</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Allgemeines</span></a>
+            <ul>
+               <li><a href='./legende.html'><span>Legende</span></a></li>
+               <li><a href='./design.html'><span>Design</span></a></li>
+               <li><a href='./indexsuche.html'><span>Indexsuche</span></a></li>
+               <li><a href='./routing.html'><span>Routing</span></a></li>
+               <li><a href='./entwicklung.html'><span>Entwicklung</span></a></li>
+               <li><a href='./dies-und-das.html'><span>Dies-Und-Das</span></a></li>
+               <li class='last'><a href='./hilf-mit.html'><span>Hilf mit!</span></a></li>
+            </ul>
+         </li>
+         <li class='active'><a href='./impressum.html'><span>Impressum</span></a></li>
+         <li class='last'><a href='../en/index.html'><span>English</span></a></li>
+      </ul>
     </div>
 
     <div id="content">
-
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-1.jpg" />
-
-      <p>&nbsp;
-      </p>
 
       <p>Jedermann ist herzlich eingeladen ... seine eigene Karte zu erstellen. Dies kann unter folgenden Aspekten interessant sein:
       </p>
@@ -64,20 +99,18 @@
         </li>
       </ol>
 
+      <p>
+        <img alt="" src="../images/schaffhausen.jpg" style="border-width: 1px; border-style: solid;" /><br />
+        <small>Seit ca. 15.000 Jahren: Der Rheinfall in Schaffhausen ist mit weitem Abstand der größte Wasserfall Europas.<br />
+               Im Sommer stürzen auf 150 Metern Breite im Mittel 600.000 Liter Wasser pro Sekunde 23 Meter in die Tiefe.</small>
+      </p>
+
       <p> Die Aspekte "Inhalt" und "Design" stehen in enger Wechselwirkung zueinander. Soll z.B. ein neues Objekt auf der Karte angezeigt werden, so ist dieses Objekt sowohl inhaltlich als auch vom Erscheinungsbild zu definieren.
-      </p>
-
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-2.jpg" />
-
-      <p>&nbsp;
       </p>
 
       <p><strong>Workflow zur Erstellung einer Freizeitkarte (Beispiel: Freizeitkarte_HAMBURG):</strong></p>
 
-        <p>1. bootstrap:<br />
+      <p>1. bootstrap:<br />
         - (Einmaliges) Komplettieren der Entwicklungsumgebung<br />
         - Laden der bounds- und sea-Dateien<br />
         - Kommando: <strong>perl mt.pl bootstrap</strong>
@@ -89,12 +122,8 @@
         - Kommando: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 190px;" src="./../images/FZK-Workflow-1.jpg" alt="" />
-
-      <p>&nbsp;
+      <p>
+        <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" src="./../images/FZK-Workflow-1.jpg" alt="" />
       </p>
 
       <p> 3a. fetch_osm:<br />
@@ -117,12 +146,8 @@
         - Kommando: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-2.jpg" alt="" />
-
-      <p>&nbsp;
+      <p>
+        <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" src="./../images/FZK-Workflow-2.jpg" alt="" />
       </p>
 
       <p> 5. split:<br />
@@ -136,12 +161,8 @@
         - Kommando: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-3.jpg" alt="" />
-
-      <p>&nbsp;
+      <p>
+        <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" src="./../images/FZK-Workflow-3.jpg" alt="" />
       </p>
 
       <p>7a. gmap:<br />
@@ -163,17 +184,12 @@
         - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
       </p>
 
-      <p>&nbsp;
+      <p>
+        <strong>Bedienung:</strong>
       </p>
 
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-3.jpg" />
-
-      <p>&nbsp;
-      </p>
-
-      <p><strong>Bedienung:</strong></p>
-
-      <p><strong>MapTool (mt.pl):</strong><br />
+      <p>
+        <strong>MapTool (mt.pl):</strong><br />
         Ruft man das Utility "mt.pl" (MapTool) ohne Parameter auf, wird folgender Hilfetext ausgegeben:
       </p>
 
@@ -257,14 +273,6 @@ ID = Code = Map  (default language):
 6752 = SWE                        = Freizeitkarte_SWE                                 (en)
       </pre>
 
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-4.jpg" />
-
-      <p>&nbsp;
-      </p>
-
       <p><strong>Terminal / Kommandofenster:</strong><br />
         - die Arbeitsschritte zur Erzeugung einer Karte erfolgen &uuml;ber ein Terminal<br />
         - hierzu sind die einzelnen Kommandos manuell im Terminal einzugeben<br />
@@ -272,12 +280,8 @@ ID = Code = Map  (default language):
         - das Windows-Synonym f&uuml;r Terminal lautet oft auch "Kommandofenster"
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 665px; height: 199px;" src="./../images/FZK_Terminal.jpg" alt="" />
-
-      <p>&nbsp;
+      <p>
+        <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" src="./../images/FZK_Terminal.jpg" alt="" />
       </p>
 
       <p><strong>Vorbedingungen:</strong><br />
@@ -316,32 +320,17 @@ ID = Code = Map  (default language):
         <br />
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-5.jpg" />
-
-      <p>&nbsp;
-      </p>
-
       <h3>Freizeitkarte Entwicklungsumgebung - Ausgabe 14.03 (0.1 GB)</h3>
 
       <p><a href="http://download.freizeitkarte-osm.de/Development/1403/Freizeitkarte-Entwicklung.zip">Download</a>
       </p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style=" width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-6.jpg" />
-
-      <p>&nbsp;
-      </p>
-
     </div>
 
     <div id="footer">
-      <h5 style="text-align: center">© freizeitkarte-osm.de - 2014/01/26</h5>
+      <h5 style="text-align: center">© freizeitkarte-osm.de - 2014/04/21</h5>
     </div>
 
   </body>
+
 </html>
