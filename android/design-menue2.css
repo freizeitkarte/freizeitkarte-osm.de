@@ -6,10 +6,18 @@ body {
   color: #555753;
 }
 
-p.programmcode {
+pre.programmcode {
   font-family: bitstream vera sans mono, monospace;
-  color: #a40000;
-  font-size: 90%;
+  font-size: small;
+  color: #000080;
+}
+
+hr {
+  border: none;
+  border-top: 1px dotted #555753;
+  color: #eeeeee;
+  background-color: #eeeeee;
+  height: 1px;
 }
 
 /* Links */
@@ -52,6 +60,11 @@ a:active, a:hover
 }
 
 #content {
+  width: 100%;
+  float: left;
+}
+
+#footer {
   width: 100%;
   float: left;
 }
