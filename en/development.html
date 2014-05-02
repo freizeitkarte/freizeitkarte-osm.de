@@ -1,18 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-  <head>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport" />
-    <title>Freizeitkarte - Development Environment</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link type="text/css" rel="stylesheet" href="../design-menue2.css" />
-  </head>
+   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-  <body>
+   <title>Freizeitkarte - Development Environment</title>
+   <link href="../design-menue2.css" rel="stylesheet" type="text/css" />
+</head>
 
-    <div id="title">
-      <h3 style="text-align: center">Freizeitkarte - Development Environment</h3>
-    </div>
+<body>
+   <div id="title">
+      <h3 style="text-align: center; margin-top: 0px;">Freizeitkarte - Development Environment</h3>
+   </div>
 
    <div id='cssmenu'>
       <ul>
@@ -73,159 +74,88 @@
                <li class='last'><a href='./call-for-help.html'><span>Call for Help</span></a></li>
             </ul>
          </li>
-         <li class='last'><a href='./imprint.html'><span>Imprint</span></a></li>
 
+         <li class='last'><a href='./imprint.html'><span>Imprint</span></a></li>
       </ul>
    </div>
 
-    <div id="content">
-
-      <p>&nbsp;
-      </p>
-
-      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-1.jpg" />
-
-      <p>&nbsp;
-      </p>
-
-      <p>Everybody is invited to build ... an own map. This can be interesting for the following reasons:
-      </p>
+   <div id="content">
+      <p>Everybody is invited to build ... an own map. This can be interesting for the following reasons:</p>
 
       <ol>
-        <li><strong>Be up-to-date:</strong><br />
-          It's possible to build a map with the most recent data. For this the OSM-data has to be downloaded and the map has to be
-          built. All necessary steps are managed by Perl-script <strong>"mt.pl"</strong>.
-        </li>
-        <li><strong>Content:</strong><br />
-          To build a map from OSM-data means data reduction. Only objects "worth" displaying are shown on the map. These
-          definitions, which objects are shown, can subject to change for nearly every object. These definitions are configured in
-          three style-files"polygons", "lines" and "points". These are plain text files and can be edited with an ordinary text editor
-          (like TextWrangler for OS X oder Notepad++ for Windows). Most definitions are well commented to give a little help.
-        </li>
-        <li><strong>Design:</strong><br />
-          The design is responsible for the visual appearence. Every appearence of nearly every object can be changed. For areas
-          this means e. g. the colour, for lines it means e. g. thickness and for POIs it could mean the icon. Responsible for
-          the design is a (binary) TYP-file. This TYP-file has to be edited with a special editor like TYPViewer for Windows.
-        </li>
+         <li><strong>Be up-to-date:</strong><br />
+         It's possible to build a map with the most recent data. For this the OSM-data has to be downloaded and the map has to be built. All necessary steps are managed by Perl-script <strong>"mt.pl"</strong>.</li>
+
+         <li><strong>Content:</strong><br />
+         To build a map from OSM-data means data reduction. Only objects "worth" displaying are shown on the map. These definitions, which objects are shown, can subject to change for nearly every object. These definitions are configured in three style-files"polygons", "lines" and "points". These are plain text files and can be edited with an ordinary text editor (like TextWrangler for OS X oder Notepad++ for Windows). Most definitions are well commented to give a little help.</li>
+
+         <li><strong>Design:</strong><br />
+         The design is responsible for the visual appearence. Every appearence of nearly every object can be changed. For areas this means e. g. the colour, for lines it means e. g. thickness and for POIs it could mean the icon. Responsible for the design is a (binary) TYP-file. This TYP-file has to be edited with a special editor like TYPViewer for Windows.</li>
       </ol>
 
-      <p>The last two aspects "content" and "design" are closely related. If a complete new type of object should be displayed it is necessary to define it regarding the two aspects.
-      </p>
+      <p><img alt="" src="../images/schaffhausen.jpg" style="border-width: 1px; border-style: solid;" /><br />
+      <small>Seit ca. 15.000 Jahren: Der Rheinfall in Schaffhausen ist mit weitem Abstand der größte Wasserfall Europas.<br />
+      Im Sommer stürzen auf 150 Metern Breite im Mittel 600.000 Liter Wasser pro Sekunde 23 Meter in die Tiefe.</small></p>
 
-      <p>&nbsp;
-      </p>
+      <p>The last two aspects "content" and "design" are closely related. If a complete new type of object should be displayed it is necessary to define it regarding the two aspects.</p>
 
-      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-2.jpg" />
+      <p><strong>Workflow zur Erstellung einer Freizeitkarte:</strong></p>
 
-      <p>&nbsp;
-      </p>
+      <p>Der Workflow in der Entwicklungsumgebung ist je nach Art der herzustellenden Karte unterschiedlich. Wir unterscheiden grundsätzlich zwei Arten:</p>
 
-      <p><strong>Build-Workflow (Example: Freizeitkarte_HAMBURG):</strong>
-      </p>
+      <ol>
+         <li>
+            <strong>Karten auf Basis von bestehenden OSM Daten Extrakten :</strong><br />
+            Bei diesem Kartentyp existieren fertige Extrakte vom gewünschten Gebiet auf GeoFabrik, das heisst wir bauen vereinfacht nach dem folgenden Schema:<br />
 
-         <p>1. bootstrap:<br />
-        - (One-time-only) Completion of the build-environment<br />
-        - Download of bounds- und sea-files<br />
-        - Command: <strong>perl mt.pl bootstrap</strong>
-      </p>
+            <ul>
+               <li>Einmaliges Komplettieren der Entwicklungsumgebung: zuladen der sogenannten boundaries (bootstrap)</li>
 
+               <li>Herunterladen der OSM Daten für die gewünschte Karte und der dazugehörigen Höhenlinien (fetch_*)</li>
 
-      <p>2. create:<br />
-        - Delete old data<br />
-        - Create necessary new directories<br />
-        - Command Lines: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong>
-      </p>
+               <li>Zusammensetzen der OSM Daten und der dazugehörigen Höhenlinien (join)</li>
 
-      <p>&nbsp;
-      </p>
+               <li>Aufteilen der Gesamtdaten in Kacheln oder sogenannte Tiles (split)</li>
 
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 190px;" src="./../images/FZK-Workflow-1.jpg" alt="" />
+               <li>Kompilieren der Karte (build)</li>
 
-      <p>&nbsp;
-      </p>
+               <li>Bauen der Kartenversionen für GPS, BaseCamp, usw (gmap, nsis, imagedir, gmapsupp)</li>
+            </ul>Mehr Details finden sie <a href="./entwicklung-normal.html">hier</a>
+         </li>
 
-      <p>3a. fetch_osm:<br />
-        - Loading the OSM map data for the state of Hamburg<br />
-        - Data source: OSM extract from geofabrik<br />
-        - The download is done via "curl" (OS X) or "wget" (Windows)<br />
-        - Command: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong>
-      </p>
+         <li>
+            <strong>Karten für die wir in der Entwicklungsumgebung die Region zuerst zuschneiden müssen:</strong><br />
+            Bei diesem Kartentyp existieren keine fertigen Extrakte vom gewünschten Gebiet auf GeoFabrik, darum müssen wir ein grösseres Gebiet als das eigentlich gewünschte herunterladen (in den meisten Fällen ganz Europa) und selbst zuschneiden. Bei diesem Kartentyp bauen wir vereinfacht nach dem folgenden Schema:<br />
 
-      <p>3b. fetch_ele:<br />
-        - Loading the elevation data for the State of Hamburg<br />
-        - Data source: www.freizeitkarte-osm.de<br />
-        - The download is done via "curl" (OS X) or "wget" (Windows)<br />
-        - Command: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong>
-      </p>
+            <ul>
+               <li>Einmaliges Kompletieren der Entwicklungsumgebung: zuladen der sogenannten boundaries (bootstrap)</li>
 
-      <p>4. join:<br />
-        - Joining map and elevation data<br />
-        - Even if only map data needed to be processed<br />
-        - Command: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong>
-      </p>
+               <li>Herunterladen der OSM Daten für übergeordnete Gebiet, im Normalfall ganz Europa (fetch_osm)</li>
 
-      <p>&nbsp;
-      </p>
+               <li>Zuschneiden des übergeordneten Gebiet auf die gewünschte Grösse, DEU+ zum Beispiel (extract_osm)</li>
 
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-2.jpg" alt="" />
+               <li>Herunterladen der Höhendaten direkt für das gewünschte Gebiet, DEU+ zum Beispiel (fetch_ele)</li>
 
-      <p>&nbsp;
-      </p>
+               <li>Zusammensetzen der OSM Daten und der dazugehörigen Höhenlinien (join)</li>
 
-      <p>5. split:<br />
-        - Splitting of the OSM data into tiles<br />
-        - Command: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong>
-      </p>
+               <li>Aufteilen der Gesamtdaten in Kacheln oder sogenannte Tiles (split)</li>
 
-      <p>6. build:<br />
-        - Generating an individual configuration file<br />
-        - Generating all map images (img, mdx, tdb)<br />
-        - Command: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong>
-      </p>
+               <li>Kompilieren der Karte (build)</li>
 
-      <p>&nbsp;
-      </p>
+               <li>Bauen der Kartenversionen für GPS, BaseCamp, usw (gmap, nsis, imagedir, gmapsupp)</li>
+            </ul>Mehr Details finden sie <a href="./entwicklung-extrakte.html">hier</a>
+         </li>
+      </ol>
 
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 550px; height: 180px;" src="./../images/FZK-Workflow-3.jpg" alt="" />
-      </p>
+      <p>Überblick über den Workflow für beide Karten Typen:</p>
 
-      <p>&nbsp;
-      </p>
+      <p><img alt="" src="./../images/Entwicklung-Prozess.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
 
-      <p>7a. gmap:<br />
-        - Generating an individual TYP-file<br />
-        - Generating a gmap file to install on OS X ("Garmin MapManager")<br />
-        - Command: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong>
-      </p>
-
-      <p>7b. nsis:<br />
-        - Generating an individual TYP-file<br />
-        - Generating a input file for the NSIS compiler<br />
-        - Generating a Windows zipcutable installer file<br />
-        - This step must be run under Windows or Linux<br />
-        - Command: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong>
-      </p>
-
-      <p>7c. gmapsupp.img:<br />
-        - Generating a Garmin image file<br />
-        - Command: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong>
-      </p>
-
-      <p>&nbsp;
-      </p>
-
-      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-3.jpg" />
-
-      <p>&nbsp;
-      </p>
-
-      <p><strong>Operation:</strong> </p>
+      <p><strong>Operation:</strong></p>
 
       <p><strong>MapTool (mt.pl):</strong><br />
-        If you call the utility "mt.pl" (MapTool) without any parameters, the following help text is displayed:<br />
-      </p>
-
-     <pre><span style="color: rgb(0,0,205)">
+      If you call the utility "mt.pl" (MapTool) without any parameters, the following help text is displayed:<br /></p>
+      <pre class="programmcode">
 mt.pl - Map Tool for creating Garmin maps, 1.3.5 - 2014/01/07
 
 Usage:
@@ -303,87 +233,48 @@ ID = Code = Map  (default language):
 6528 = NLD                        = Freizeitkarte_NLD                                 (en)
 6616 = POL                        = Freizeitkarte_POL                                 (pl)
 6752 = SWE                        = Freizeitkarte_SWE                                 (en)
-     </pre>
-
-      <p>&nbsp;
-      </p>
-
-      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-4.jpg" />
-
-      <p>&nbsp;
-      </p>
+</pre>
 
       <p><strong>Terminal / command window:</strong><br />
-        - The operations to generate a map are entered in a terminal / command window<br />
-        - These individual commands needs to be manually entered in the terminal<br />
-        - Or, alternatively, a corresponding batch files can be generated<br />
-      </p>
+      - The operations to generate a map are entered in a terminal / command window<br />
+      - These individual commands needs to be manually entered in the terminal<br />
+      - Or, alternatively, a corresponding batch files can be generated<br /></p>
 
-      <p>&nbsp;
-      </p>
-
-      <img style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 665px; height: 199px;" src="./../images/FZK_Terminal.jpg" alt="" />
-
-      <p>&nbsp;
-      </p>
+      <p><img alt="" src="./../images/FZK_Terminal.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color; width: 665px; height: 199px;" /></p>
 
       <p><strong>Requirements:</strong><br />
-        - Perl (5.10) must be installed<br />
-        - Java (1.7) must be installed<br />
-        - At least 2 GB of memory
-      </p>
+      - Perl (5.10) must be installed<br />
+      - Java (1.7) must be installed<br />
+      - At least 2 GB of memory</p>
 
       <p><strong>Recommendations for generating a map for a State:</strong><br />
-        - See requirements<br />
-        - Default Settings
-      </p>
+      - See requirements<br />
+      - Default Settings</p>
 
       <p><strong>Recommendations for generating a map of Germany:</strong><br />
-        - Powerful multi-core CPU<br />
-        - Java Virtual Machine with 64bit<br />
-        - For each used core at least 2 GB of RAM are necessary
-      </p>
+      - Powerful multi-core CPU<br />
+      - Java Virtual Machine with 64bit<br />
+      - For each used core at least 2 GB of RAM are necessary</p>
 
       <p><strong>Note:</strong><br />
-        - The first map should be generated with the smallest possible map<br />
-        - The build process of the map of Germany takes about 45 minutes by using 4 CPU cores<br />
-        - Further information on the development environment is in the file "readme.txt" <br />
-        - The development environment runs on OS X, Windows and Linux<br />
-        - On 64-bit Linux systems, the support for 32-bit programs must be installed<br />
-        - To generate the Windows installer under Linux, the NSIS (Nullsoft Scriptable Install System) package must be installed
-      </p>
+      - The first map should be generated with the smallest possible map<br />
+      - The build process of the map of Germany takes about 45 minutes by using 4 CPU cores<br />
+      - Further information on the development environment is in the file "readme.txt"<br />
+      - The development environment runs on OS X, Windows and Linux<br />
+      - On 64-bit Linux systems, the support for 32-bit programs must be installed<br />
+      - To generate the Windows installer under Linux, the NSIS (Nullsoft Scriptable Install System) package must be installed</p>
 
       <p><b>Options:</b><br />
-        There are options available to change the map style which can be activated:<br />
-        - WINTERSPORT: display of lines for winter sports (slopes, tracks, ...) [lines-master]<br />
-        - T36ROUTING: routing via hiking/ alpin tracks class T3-T6 [lines-master]<br />
-        - TRIGMARK: display of trigonometric markers [points-master]<br />
-        - DRINKINGWATER: display of drinking water points [points-master]<br />
-        - KULTURLAND: display of farmer land [polygons-master]<br />
-      </p>
+      There are options available to change the map style which can be activated:<br />
+      - WINTERSPORT: display of lines for winter sports (slopes, tracks, ...) [lines-master]<br />
+      - T36ROUTING: routing via hiking/ alpin tracks class T3-T6 [lines-master]<br />
+      - TRIGMARK: display of trigonometric markers [points-master]<br />
+      - DRINKINGWATER: display of drinking water points [points-master]<br />
+      - KULTURLAND: display of farmer land [polygons-master]<br /></p>
 
-      <p>&nbsp;
-      </p>
+      <h3>Freizeitkarte development environment - Release 14.03 (0.1 GB)</h3>
 
-      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="./../images/DESY-Trenner-5.jpg" />
-
-      <p>&nbsp;
-      </p>
-
-      <h3> Freizeitkarte development environment - Release 14.03 (0.1 GB)</h3>
-
-      <p><strong><a href="http://download.freizeitkarte-osm.de/Development/1403/Freizeitkarte-Entwicklung.zip">Download</a></strong>
-      </p>
-
-      <p>&nbsp;
-      </p>
-
-      <img style="width: 800px; height: 100px; border: 1px solid;" alt="" src="../images/DESY-Trenner-6.jpg" />
-
-      <p>&nbsp;
-      </p>
-
-    </div>
-
-  </body>
+      <p><strong><a href="http://download.freizeitkarte-osm.de/Development/1403/Freizeitkarte-Entwicklung.zip">Download</a></strong></p>
+   </div>
+</body>
 </html>

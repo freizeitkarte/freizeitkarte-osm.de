@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport" />
+   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+   <title>Freizeitkarte - Entwicklung einer individuellen Karte - FZK eigene Extrakte</title>
+   <link href="../design-menue2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   <div id="title">
+      <h3 style="text-align: center; margin-top: 0px;">Freizeitkarte - Entwicklung einer individuellen Karte - FZK eigene Extrakte</h3>
+   </div>
+
+   <div id='cssmenu'>
+      <ul>
+         <li class='has-sub'>
+            <a href='#'><span>Start &rsaquo;</span></a>
+
+            <ul>
+               <li><a href='./index.html'><span>&Uuml;berblick</span></a></li>
+
+               <li><a href='./ausgabe.html'><span>Ausgabe</span></a></li>
+
+               <li class='last'><a href='./installation.html'><span>Installation</span></a></li>
+            </ul>
+         </li>
+
+         <li class='has-sub'>
+            <a href='#'><span>Karten &rsaquo;</span></a>
+
+            <ul>
+               <li><a href='./deutschland.html'><span>Deutschland</span></a></li>
+
+               <li><a href='./oesterreich.html'><span>&Ouml;sterreich</span></a></li>
+
+               <li><a href='./schweiz.html'><span>Schweiz</span></a></li>
+
+               <li><a href='./frankreich.html'><span>Frankreich</span></a></li>
+
+               <li><a href='./luxemburg.html'><span>Luxemburg</span></a></li>
+
+               <li><a href='./polen.html'><span>Polen</span></a></li>
+
+               <li><a href='./schweden.html'><span>Schweden</span></a></li>
+
+               <li><a href='./weitere-laender.html'><span>Weitere L&auml;nder</span></a></li>
+
+               <li><a href='./plus-laender.html'><span>Plusl&auml;nder</span></a></li>
+
+               <li class='last'><a href='./regionen.html'><span>Regionen</span></a></li>
+            </ul>
+         </li>
+
+         <li class='has-sub'>
+            <a href='#'><span>Dokumentation &rsaquo;</span></a>
+
+            <ul>
+               <li><a href='./legende.html'><span>Legende</span></a></li>
+
+               <li><a href='./design.html'><span>Design</span></a></li>
+
+               <li><a href='./indexsuche.html'><span>Indexsuche</span></a></li>
+
+               <li><a href='./routing.html'><span>Routing</span></a></li>
+
+               <li><a href='./entwicklung.html'><span>Entwicklung</span></a></li>
+
+               <li><a href='./dies-und-das.html'><span>Dies-Und-Das</span></a></li>
+
+               <li class='last'><a href='./hilf-mit.html'><span>Hilf mit!</span></a></li>
+            </ul>
+         </li>
+         <li class='last'><a href='./impressum.html'><span>Impressum</span></a></li>
+
+      </ul>
+   </div>
+
+   <div id="content">
+
+      <p><h3>Workflow zur Erstellung einer Freizeitkarte basierend auf selbst zugeschnittenen Extrakten (Beispiel: Freizeitkarte_DEU+):</h3></p>
+
+      <p>{Natürlich noch nicht korrekt und nicht komplett}</p>
+
+      <p>Komplettierung der Entwicklungsumgebung und Vorbereitung der Verzeichnisse:</p>
+
+      <p><strong>1. bootstrap:</strong><br />
+      - (Einmaliges) Komplettieren der Entwicklungsumgebung<br />
+      - Laden der bounds- und sea-Dateien<br />
+      - Kommando: <strong>perl mt.pl bootstrap</strong></p>
+
+      <p><strong>2. create:</strong><br />
+      Diese Aktion sollte auf beide relevanten Regionen ausgeführt werden, die Region, welche unsere gewünschte Karte enthält (meistens EUROPE) und die gewünschte Karte selbst. Die Aktion ist nicht zwingend nötig, die Verzeichnisse werden auch so angelegt, aber mit dieser Aktion werden alte Daten gel&ouml;scht:<br />
+      - L&ouml;schen von "alten" Daten<br />
+      - Neuanlegen von erforderlichen Verzeichnissen<br />
+      - Kommando(s):<br />
+      &nbsp;&nbsp;<strong>perl mt.pl create Freizeitkarte_EUROPE</strong><br />
+      &nbsp;&nbsp;<strong>perl mt.pl create Freizeitkarte_DEU+</strong></p>
+
+      <p><img alt="" src="./../images/FZK-Workflow-1.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
+
+      <p><strong>3a. fetch_osm:</strong><br />
+      - Laden der OSM-Kartendaten f&uuml;r die Region, welche unsere gewünschte Karte enthält, meistens EUROPE<br />
+      - Datenquelle: OSM-Extrakt von geofabrik<br />
+      - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
+      - Kommando: <strong>perl mt.pl fetch_osm Freizeitkarte_EUROPE</strong></p>
+
+      <p><strong>3b. extract_osm:</strong><br />
+      - Zuschneiden der heruntergeladenen OSM Daten auf die gewünschte Grösse/Karte<br />
+      - Kommando: <strong>perl mt.pl extract_osm Freizeitkarte_DEU+</strong></p>
+
+      <p><strong>3c. fetch_ele:</strong><br />
+      - Laden der H&ouml;hendaten (elevations) f&uuml;r die gewünschte Karte, in unserem Beispiel DEU+<br />
+      - Datenquelle: www.freizeitkarte-osm.de<br />
+      - der Download erfolgt via Utility "curl" (OS X) oder "wget" (Windows)<br />
+      - Kommando: <strong>perl mt.pl fetch_ele Freizeitkarte_DEU+</strong></p>
+
+      <p><strong>4. join:</strong><br />
+      - Zusammenf&uuml;hren der Karten- und H&ouml;hendaten<br />
+      - auch erforderlich wenn nur Kartendaten verarbeitet werden sollen<br />
+      - Kommando: <strong>perl mt.pl join Freizeitkarte_DEU+</strong></p>
+
+      <p><img alt="" src="./../images/FZK-Workflow-2.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
+
+      <p><strong>5. split:</strong><br />
+      - Aufteilen (split) der OSM-Daten in Kacheln<br />
+      - Kommando: <strong>perl mt.pl split Freizeitkarte_DEU+</strong></p>
+
+      <p><strong>6. build:</strong><br />
+      - Erzeugen einer individuellen Konfigurationsdatei<br />
+      - Erzeugen aller Karten-Images (img, mdx, tdb)<br />
+      - Kommando: <strong>perl mt.pl build Freizeitkarte_DEU+</strong></p>
+
+      <p><img alt="" src="./../images/FZK-Workflow-3.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
+
+      <p><strong>7a. gmap:</strong><br />
+      - Erzeugen eines individuellen TYP-Files<br />
+      - Erzeugen einer gmap-Datei zur Installation unter OS X ("Garmin MapManager")<br />
+      - Kommando: <strong>perl mt.pl gmap Freizeitkarte_DEU+</strong></p>
+
+      <p><strong>7b. nsis:</strong><br />
+      - Erzeugen eines individuellen TYP-Files<br />
+      - Erzeugen einer Input-Datei f&uuml;r den NSIS-Compiler<br />
+      - Erzeugen einer ausf&uuml;hrbaren Windows-Installerdatei<br />
+      - dieser Schritt mu&szlig; unter Windows ausgef&uuml;hrt werden<br />
+      - Kommando: <strong>perl mt.pl nsis Freizeitkarte_DEU+</strong></p>
+
+      <p><strong>7c. gmapsupp.img:</strong><br />
+      - Erzeugen eines gmapsupp-Image-Datei<br />
+      - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_DEU+</strong></p>
+
+      <p><strong>7d. ImageDir:</strong><br />
+      - Erzeugen der von Qlandkarte GT (und anderen Anwendungen) lesbaren Verzeichniss Struktur<br />
+      - Kommando: <strong>perl mt.pl imagedir Freizeitkarte_DEU+</strong></p>
+
+   </div>
+</body>
+</html>
