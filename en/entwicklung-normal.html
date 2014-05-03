@@ -21,61 +21,61 @@
             <a href='#'><span>Start &rsaquo;</span></a>
 
             <ul>
-               <li><a href='./index.html'><span>&Uuml;berblick</span></a></li>
+               <li><a href='./index.html'><span>Overview</span></a></li>
 
-               <li><a href='./ausgabe.html'><span>Ausgabe</span></a></li>
+               <li><a href='./release.html'><span>Release</span></a></li>
 
                <li class='last'><a href='./installation.html'><span>Installation</span></a></li>
             </ul>
          </li>
 
          <li class='has-sub'>
-            <a href='#'><span>Karten &rsaquo;</span></a>
+            <a href='#'><span>Maps &rsaquo;</span></a>
 
             <ul>
-               <li><a href='./deutschland.html'><span>Deutschland</span></a></li>
+               <li><a href='./germany.html'><span>Germany</span></a></li>
 
-               <li><a href='./oesterreich.html'><span>&Ouml;sterreich</span></a></li>
+               <li><a href='./austria.html'><span>Austria</span></a></li>
 
-               <li><a href='./schweiz.html'><span>Schweiz</span></a></li>
+               <li><a href='./switzerland.html'><span>Switzerland</span></a></li>
 
-               <li><a href='./frankreich.html'><span>Frankreich</span></a></li>
+               <li><a href='./france.html'><span>France</span></a></li>
 
-               <li><a href='./luxemburg.html'><span>Luxemburg</span></a></li>
+               <li><a href='./luxembourg.html'><span>Luxembourg</span></a></li>
 
-               <li><a href='./polen.html'><span>Polen</span></a></li>
+               <li><a href='./poland.html'><span>Poland</span></a></li>
 
-               <li><a href='./schweden.html'><span>Schweden</span></a></li>
+               <li><a href='./sweden.html'><span>Sweden</span></a></li>
 
-               <li><a href='./weitere-laender.html'><span>Weitere L&auml;nder</span></a></li>
+               <li><a href='./more-countries.html'><span>More Countries</span></a></li>
 
-               <li><a href='./plus-laender.html'><span>Plusl&auml;nder</span></a></li>
+               <li><a href='./plus-countries.html'><span>Plus Countries</span></a></li>
 
-               <li class='last'><a href='./regionen.html'><span>Regionen</span></a></li>
+               <li class='last'><a href='./regions.html'><span>Regions</span></a></li>
             </ul>
          </li>
 
          <li class='has-sub'>
-            <a href='#'><span>Dokumentation &rsaquo;</span></a>
+            <a href='#'><span>Documentation &rsaquo;</span></a>
 
             <ul>
-               <li><a href='./legende.html'><span>Legende</span></a></li>
+               <li><a href='./maplegend.html'><span>Map legend</span></a></li>
 
                <li><a href='./design.html'><span>Design</span></a></li>
 
-               <li><a href='./indexsuche.html'><span>Indexsuche</span></a></li>
+               <li><a href='./indexsearch.html'><span>Indexsearch</span></a></li>
 
                <li><a href='./routing.html'><span>Routing</span></a></li>
 
-               <li><a href='./entwicklung.html'><span>Entwicklung</span></a></li>
+               <li><a href='./development.html'><span>Development</span></a></li>
 
-               <li><a href='./dies-und-das.html'><span>Dies-Und-Das</span></a></li>
+               <li><a href='./bits-and-pieces.html'><span>Bits and Pieces</span></a></li>
 
-               <li class='last'><a href='./hilf-mit.html'><span>Hilf mit!</span></a></li>
+               <li class='last'><a href='./call-for-help.html'><span>Call for Help</span></a></li>
             </ul>
          </li>
-         <li class='last'><a href='./impressum.html'><span>Impressum</span></a></li>
 
+         <li class='last'><a href='./imprint.html'><span>Imprint</span></a></li>
       </ul>
    </div>
 
@@ -140,9 +140,71 @@
       - Erzeugen eines gmapsupp-Image-Datei<br />
       - Kommando: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong></p>
 
-      <p><strong>7d. ImageDir:<br />
+      <p><strong>7d. ImageDir:</strong><br />
       - Erzeugen der von Qlandkarte GT (und anderen Anwendungen) lesbaren Verzeichniss Struktur<br />
       - Kommando: <strong>perl mt.pl imagedir Freizeitkarte_HAMBURG</strong></p>
+
+      <h3>Bisherige englische Version</h3>
+
+      <p><strong>Build-Workflow (Example: Freizeitkarte_HAMBURG):</strong></p>
+
+      <p>1. bootstrap:<br />
+      - (One-time-only) Completion of the build-environment<br />
+      - Download of bounds- und sea-files<br />
+      - Command: <strong>perl mt.pl bootstrap</strong></p>
+
+      <p>2. create:<br />
+      - Delete old data<br />
+      - Create necessary new directories<br />
+      - Command Lines: <strong>perl mt.pl create Freizeitkarte_HAMBURG</strong></p>
+
+      <p><img alt="" src="./../images/FZK-Workflow-1.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
+
+      <p>3a. fetch_osm:<br />
+      - Loading the OSM map data for the state of Hamburg<br />
+      - Data source: OSM extract from geofabrik<br />
+      - The download is done via "curl" (OS X) or "wget" (Windows)<br />
+      - Command: <strong>perl mt.pl fetch_osm Freizeitkarte_HAMBURG</strong></p>
+
+      <p>3b. fetch_ele:<br />
+      - Loading the elevation data for the State of Hamburg<br />
+      - Data source: www.freizeitkarte-osm.de<br />
+      - The download is done via "curl" (OS X) or "wget" (Windows)<br />
+      - Command: <strong>perl mt.pl fetch_ele Freizeitkarte_HAMBURG</strong></p>
+
+      <p>4. join:<br />
+      - Joining map and elevation data<br />
+      - Even if only map data needed to be processed<br />
+      - Command: <strong>perl mt.pl join Freizeitkarte_HAMBURG</strong></p>
+
+      <p><img alt="" src="./../images/FZK-Workflow-2.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
+
+      <p>5. split:<br />
+      - Splitting of the OSM data into tiles<br />
+      - Command: <strong>perl mt.pl split Freizeitkarte_HAMBURG</strong></p>
+
+      <p>6. build:<br />
+      - Generating an individual configuration file<br />
+      - Generating all map images (img, mdx, tdb)<br />
+      - Command: <strong>perl mt.pl build Freizeitkarte_HAMBURG</strong></p>
+
+      <p><img alt="" src="./../images/FZK-Workflow-3.jpg" style="border-width: 1px; border-style: solid; border-color: -moz-use-text-color;" /></p>
+
+      <p>7a. gmap:<br />
+      - Generating an individual TYP-file<br />
+      - Generating a gmap file to install on OS X ("Garmin MapManager")<br />
+      - Command: <strong>perl mt.pl gmap Freizeitkarte_HAMBURG</strong></p>
+
+      <p>7b. nsis:<br />
+      - Generating an individual TYP-file<br />
+      - Generating a input file for the NSIS compiler<br />
+      - Generating a Windows zipcutable installer file<br />
+      - This step must be run under Windows or Linux<br />
+      - Command: <strong>perl mt.pl nsis Freizeitkarte_HAMBURG</strong></p>
+
+      <p>7c. gmapsupp.img:<br />
+      - Generating a Garmin image file<br />
+      - Command: <strong>perl mt.pl gmapsupp Freizeitkarte_HAMBURG</strong></p>
    </div>
 </body>
 </html>
