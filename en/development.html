@@ -99,51 +99,51 @@
 
       <p>The last two aspects "content" and "design" are closely related. If a complete new type of object should be displayed it is necessary to define it regarding the two aspects.</p>
 
-      <p><strong>Workflow zur Erstellung einer Freizeitkarte:</strong></p>
+      <p><strong>Workflow for creating a Freizeitkarte:</strong></p>
 
-      <p>Der Workflow in der Entwicklungsumgebung ist je nach Art der herzustellenden Karte unterschiedlich. Wir unterscheiden grundsätzlich zwei Arten:</p>
+      <p>The exact workflow depends on the type of map to be generated. Basically there are two types supported by the development environment::</p>
 
       <ol>
          <li>
-            <strong>Karten auf Basis von bestehenden OSM Daten Extrakten :</strong><br />
-            Bei diesem Kartentyp existieren fertige Extrakte vom gewünschten Gebiet auf GeoFabrik, das heisst wir bauen vereinfacht nach dem folgenden Schema:<br />
+            <strong>Maps based on existing OSM data extracts:</strong><br />
+            There are existing extracts downloadable at GeoFabrik for this map type. Therefore the workflow looks simplified as follows:<br />
 
             <ul>
-               <li>Einmaliges Komplettieren der Entwicklungsumgebung: zuladen der sogenannten boundaries (bootstrap)</li>
+               <li>One time completion of the development environment: downloading the boundaries into the development environment (bootstrap)</li>
 
-               <li>Herunterladen der OSM Daten für die gewünschte Karte und der dazugehörigen Höhenlinien (fetch_*)</li>
+               <li>Downloading the OSM data and the according elevation data of the wished map (fetch_*)</li>
 
-               <li>Zusammensetzen der OSM Daten und der dazugehörigen Höhenlinien (join)</li>
+               <li>Joining the downloaded OSM and elevation data (join)</li>
 
-               <li>Aufteilen der Gesamtdaten in Kacheln oder sogenannte Tiles (split)</li>
+               <li>Spliting the complete data into smaller junks, so called tiles (split)</li>
 
-               <li>Kompilieren der Karte (build)</li>
+               <li>Compiling the map (build)</li>
 
-               <li>Bauen der Kartenversionen für GPS, BaseCamp, usw (gmap, nsis, imagedir, gmapsupp)</li>
-            </ul>Mehr Details finden sie <a href="./entwicklung-normal.html">hier</a>
+               <li>Creating the different versions for GPS, BaseCamp, and so on (gmap, nsis, imagedir, gmapsupp)</li>
+            </ul>More details can be found <a href="./development-normal.html">here</a>
          </li>
 
          <li>
-            <strong>Karten für die wir in der Entwicklungsumgebung die Region zuerst zuschneiden müssen:</strong><br />
-            Bei diesem Kartentyp existieren keine fertigen Extrakte vom gewünschten Gebiet auf GeoFabrik, darum müssen wir ein grösseres Gebiet als das eigentlich gewünschte herunterladen (in den meisten Fällen ganz Europa) und selbst zuschneiden. Bei diesem Kartentyp bauen wir vereinfacht nach dem folgenden Schema:<br />
+            <strong>Maps for which we have to extract the wished region on our own:</strong><br />
+            For this map type there are no existing extracts for the wished region downloadable from GeoFabrik, this is why we have to download a bigger region (containing our wished region, in most cases complete Europe) and extract the wished region inside the development environment on our own. The workflow looks simplified as follows:<br />
 
             <ul>
-               <li>Einmaliges Kompletieren der Entwicklungsumgebung: zuladen der sogenannten boundaries (bootstrap)</li>
+               <li>One time completion of the development environment: downloading the boundaries into the development environment (bootstrap)</li>
 
-               <li>Herunterladen der OSM Daten für übergeordnete Gebiet, im Normalfall ganz Europa (fetch_osm)</li>
+               <li>Downloading the OSM data of the bigger region containing the wished one, normally complete Europe (fetch_osm)</li>
 
-               <li>Zuschneiden des übergeordneten Gebiet auf die gewünschte Grösse, DEU+ zum Beispiel (extract_osm)</li>
+               <li>Extracting the wished region from the bigger one, e.g. DEU+ (extract_osm)</li>
 
-               <li>Herunterladen der Höhendaten direkt für das gewünschte Gebiet, DEU+ zum Beispiel (fetch_ele)</li>
+               <li>Downloading the elevation data directly for the wished region, e.g. DEU+ (fetch_ele)</li>
 
-               <li>Zusammensetzen der OSM Daten und der dazugehörigen Höhenlinien (join)</li>
+               <li>Joining the extracted OSM data and the downloaded elevation data (join)</li>
 
-               <li>Aufteilen der Gesamtdaten in Kacheln oder sogenannte Tiles (split)</li>
+               <li>Spliting the complete data into smaller junks, so called tiles (split)</li>
 
-               <li>Kompilieren der Karte (build)</li>
+               <li>Compiling the map (build)</li>
 
-               <li>Bauen der Kartenversionen für GPS, BaseCamp, usw (gmap, nsis, imagedir, gmapsupp)</li>
-            </ul>Mehr Details finden sie <a href="./entwicklung-extrakte.html">hier</a>
+               <li>Creating the different versions for GPS, BaseCamp, and so on (gmap, nsis, imagedir, gmapsupp)</li>
+            </ul>More details can be found <a href="./development-extracts.html">here</a>
          </li>
       </ol>
 
