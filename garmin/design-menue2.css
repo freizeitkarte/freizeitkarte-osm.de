@@ -1,0 +1,191 @@
+/* design-menue - cascading style sheet (css)  */
+
+body {
+  font-family: luxi sans, trebuchet ms, bitstream vera sans, sans-serif;
+  background-color: #eeeeee;
+  color: #555753;
+}
+
+pre.programmcode {
+  font-family: bitstream vera sans mono, monospace;
+  font-size: small;
+  color: #000080;
+}
+
+hr {
+  border: none;
+  border-top: 1px dotted #555753;
+  color: #eeeeee;
+  background-color: #eeeeee;
+  height: 1px;
+}
+
+/* Links */
+
+a.extern:link, a.extern:visited, a.extern:active, a.extern:hover
+{
+  background: url(./images/external.png) center right no-repeat;
+  padding-right: 12px;
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a.extern:active, a.extern:hover
+{
+  text-decoration: underline;
+}
+
+a:link, a:visited, a:active, a:hover
+{
+  text-decoration: none;
+  color: #ce5c00;
+}
+
+a:active, a:hover
+{
+  text-decoration: underline;
+}
+
+/* Seitenstruktur */
+
+#title {
+  color: #555753;
+  width: 100%;
+  float: left;
+}
+
+#cssmenu {
+  width: 100%;
+  float: left;
+}
+
+#content {
+  width: 100%;
+  float: left;
+}
+
+#footer {
+  width: 100%;
+  float: left;
+}
+
+/* Tabellen */
+
+table {
+  border: 1px dotted #555753;
+  cellpadding: 0;
+  cellspacing: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+table.style2 {
+  border: none;
+  text-align: left;
+}
+
+th {
+  border: none;
+  background-color: #b0c69b;
+}
+
+td {
+  border: none;
+}
+
+tr.zeilenfarbe {
+  background-color: #d3d7cf;
+}
+
+/* CSS-Menue */
+
+#cssmenu ul {
+  background: #555753;
+  height: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#cssmenu li {
+  float: left;
+  padding: 0px;
+}
+
+#cssmenu li a {
+  background: #555753 url('./images/seperator.gif') bottom right no-repeat;
+  display: block;
+  font-weight: normal;
+  line-height: 35px;
+  margin: 0px;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#cssmenu > ul > li > a {
+  color: #ffffff;
+}
+
+#cssmenu ul ul a {
+  color: #ffffff;
+}
+
+#cssmenu li > a:hover,
+#cssmenu ul li:hover > a {
+  background: #2580a2 url('./images/hover.png') bottom center no-repeat;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#cssmenu li ul {
+  background: #555753;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 200px;
+  z-index: 200;
+  /*top:1em;
+  /*left:0;*/
+}
+
+#cssmenu li:hover ul {
+  display: block;
+}
+
+#cssmenu li li {
+  background: url('./images/sub_sep.gif') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+}
+
+#cssmenu li:hover li a {
+  background: none;
+}
+
+#cssmenu li ul a {
+  display: block;
+  height: 35px;
+  line-height:35px;
+  margin: 0px;
+  padding: 0px 15px 0px 15px;
+  text-align: left;
+}
+
+#cssmenu li ul a:hover,
+#cssmenu li ul li:hover > a {
+  background: #2580a2 url('./images/hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#cssmenu p {
+  clear: left;
+}
