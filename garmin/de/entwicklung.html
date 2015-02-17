@@ -158,7 +158,7 @@
       <pre class="programmcode">
 PS Freizeitkarte-Entwicklung&gt; perl mt.pl -h
 
-mt.pl - Map Tool for creating Garmin maps, 1.3.9 - 2015.01/10
+mt.pl - Map Tool for creating Garmin maps, 1.3.11 - 2015/02/17
 
 Usage:
 perl mt.pl [--ram=&lt;value&gt;] [--cores=&lt;value&gt;] [--ele=&lt;value&gt;] \
@@ -180,7 +180,7 @@ perl mt.pl                              build     Freizeitkarte_Hamburg
 perl mt.pl  --ram=1536    --cores=2     build     Freizeitkarte_Hamburg
 perl mt.pl  --ram=6000                  build     5815
 perl mt.pl  --ram=6000    --cores=max   build     5815
-perl mt.pl  --ram=6000    --cores=max   build     Freizeitkarte_Oesterreich  DT36ROUTING
+perl mt.pl  --ram=6000    --cores=max   build     Freizeitkarte_Oesterreich  DEXTENDEDROUTING
 
 Options:
 --ram      = javaheapsize in MB (join, split, build) (default = 1536)
@@ -280,7 +280,7 @@ ID = Code = Map  (default language):
       <p><strong>Schalter:</strong><br />
       In den Kartenstyles sind einige logische Schalter (bedingte &Uuml;bersetzung) eingebaut, die aktiviert werden k&ouml;nnen:<br />
       - WINTERSPORT: Darstellung von Linien f&uuml;r Wintersportaktivit&auml;ten (Pisten, Loipen, ...) [lines-master]<br />
-      - T36ROUTING: Routing auch &uuml;ber (Berg-)Wanderwege der Klassen T3-T6 [lines-master]<br />
+      - EXTENDEDROUTING: Routing auch &uuml;ber (Berg-)Wanderwege der Klassen T4-T6 [lines-master]<br />
       - TRIGMARK: Darstellung von Trigonometrischen Markierungen [points-master]<br />
       - DRINKINGWATER: Darstellung von Trinkwasserstellen [points-master]<br />
       - KULTURLAND: Darstellung von Ackerfl&auml;chen [polygons-master]<br /></p>
