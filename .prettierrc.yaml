@@ -1,0 +1,9 @@
+# --------------------------------------------
+# Name    : .prettierrc.yaml
+# Purpose : VS Code Prettier Configuration
+# Version : v0.1.0 - 2020/07/09
+# Author  : Klaus Tockloth
+# --------------------------------------------
+
+# default: 80
+printWidth: 132
