@@ -268,7 +268,7 @@ tr.zeilenfarbe {
   border-width: 1px; border-color: lightgray; border-style: solid; width: 100px; height: 60px;
 }
 .legend .mtblines img {
-  width: 431px; height: 61px; object-fit: contain;
+  width: 431px; height: 61px; max-width: 100%; object-fit: contain;
 }
 .legend .poi {
   min-height: 35px;
