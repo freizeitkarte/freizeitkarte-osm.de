@@ -4,7 +4,16 @@ body {
   font-family: luxi sans, trebuchet ms, bitstream vera sans, sans-serif;
   background-color: #fdfdfd;
   color: #555753;
+  margin-top: 0em;
 }
+
+/*
+body {
+  font-family: luxi sans, trebuchet ms, bitstream vera sans, sans-serif;
+  background-color: #fdfdfd;
+  color: #555753;
+}
+*/
 
 pre.programmcode {
   font-family: bitstream vera sans mono, monospace;
@@ -46,6 +55,46 @@ a:active, a:hover
   text-decoration: underline;
 }
 
+/* Responsive */
+
+@media screen {
+    /* For mobile: */
+  .legend .area {
+    width: 100%;
+  }
+  .legend .poi {
+    width: 100%;
+  }
+  .legend .mtblines{
+    display: block;
+  }
+}
+@media screen and (min-width: 650px) {
+    /* For tablet: */
+  .legend .area {
+    width: 100%;
+  }
+  .legend .poi {
+    width: 50%;
+  }
+  .legend .mtblines{
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+    /* For desktop: */
+  .legend .area {
+    width: 50%;
+  }
+  .legend .poi {
+    width: 33%;
+  }
+  .legend .mtblines{
+    display: flex;
+  }
+}
+
 /* Seitenstruktur */
 
 #title {
@@ -57,12 +106,30 @@ a:active, a:hover
 #cssmenu {
   width: 100%;
   float: left;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
+/*
+#cssmenu {
+  width: 100%;
+  float: left;
+}
+*/
+
+#content {
+  width: 100%;
+  display: inline-block;
+}
+
+/*
 #content {
   width: 100%;
   float: left;
 }
+*/
 
 #footer {
   width: 100%;
@@ -72,17 +139,17 @@ a:active, a:hover
 /* Tabellen */
 
 table {
-  border: 1px dotted #555753;
+  /* border: 1px dotted #555753; */
+  cellpadding: 0;
+  cellspacing: 0;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
 table.style2 {
   border: none;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 1em;
-  margin-bottom: 0;
+  text-align: left;
+  margin-bottom: 0em;
 }
 
 th {
@@ -106,6 +173,14 @@ tr.zeilenfarbe {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* Link Position Korrektur mit sticky Menü */
+:target::before {
+  content: "";
+  display: block;
+  height: 50px; /* fixed header height*/
+  margin: -50px 0 0; /* negative fixed header height */
 }
 
 #cssmenu li {
@@ -189,4 +264,67 @@ tr.zeilenfarbe {
 
 #cssmenu p {
   clear: left;
+}
+
+/* Legende */
+
+.legend {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+  width: 100%;
+}
+.legend .subtitle{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  clear: left;
+}
+.legend .area {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+.legend .lines{
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  float: left;
+  width: 100%;
+}
+.legend .mtblines {
+  min-height: 60px;
+  align-items: center;
+  float: left;
+  width: 100%;
+}
+.legend .area img, .legend .lines img {
+  border-width: 1px; border-color: lightgray; border-style: solid; width: 100px; height: 60px;
+}
+.legend .mtblines img {
+  width: 431px; height: 61px; max-width: 100%; object-fit: contain;
+}
+.legend .poi {
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+.legend .poi img {
+  border-width: 1px; border-color: lightgray; border-style: solid; width: 35px; height: 35px;
+}
+.legend .description {
+  text-align: left;
+  padding-left: 4px;
+}
+.legend .mtblines .description {
+  padding-bottom: 12px;
+}
+.legend:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }

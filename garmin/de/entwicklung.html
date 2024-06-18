@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.6.0">
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
   <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <title>Entwicklung</title>
@@ -27,47 +27,39 @@
         </ul>
       </li>
 
-      <li class='has-sub'>
-        <a href='#'><span>Karten ›</span></a>
+      <li class="has-sub">
+        <a href="#"><span>Karten ›</span></a>
         <ul>
           <li>
-            <a href='./deutschland.html'><span>Deutschland</span></a>
+            <a href="./nordeuropa.html"><span>Nordeuropa</span></a>
           </li>
 
           <li>
-            <a href='./oesterreich.html'><span>Österreich</span></a>
+            <a href="./osteuropa.html"><span>Osteuropa</span></a>
           </li>
 
           <li>
-            <a href='./schweiz.html'><span>Schweiz</span></a>
+            <a href="./suedosteuropa.html"><span>Südosteuropa</span></a>
           </li>
 
           <li>
-            <a href='./frankreich.html'><span>Frankreich</span></a>
+            <a href="./suedeuropa.html"><span>Südeuropa</span></a>
           </li>
 
           <li>
-            <a href='./luxemburg.html'><span>Luxemburg</span></a>
+            <a href="./westeuropa.html"><span>Westeuropa</span></a>
           </li>
 
           <li>
-            <a href='./polen.html'><span>Polen</span></a>
+            <a href="./mitteleuropa.html"><span>Mitteleuropa</span></a>
           </li>
 
           <li>
-            <a href='./schweden.html'><span>Schweden</span></a>
+            <a href="./gebirge.html"><span>Gebirge</span></a>
           </li>
 
-          <li>
-            <a href='./weitere-laender.html'><span>Weitere Länder</span></a>
-          </li>
-
-          <li>
-            <a href='./plus-laender.html'><span>Plusländer</span></a>
-          </li>
-
-          <li class='last'>
-            <a href='./regionen.html'><span>Regionen</span></a>
+          <li class="last">
+            <a href="./sonstigelaender.html"><span>Sonstige</span></a>
           </li>
         </ul>
       </li>
@@ -112,20 +104,20 @@
   </div>
 
   <div id="content">
-    <p>Jedermann ist herzlich eingeladen ... seine eigene Karte zu erstellen. Dies kann unter folgenden Aspekten interessant sein:</p>
+    <p>Jedermann ist herzlich eingeladen seine eigene Karte zu erstellen. Dies kann unter folgenden Aspekten interessant sein:</p>
 
     <ol>
-      <li><strong>Aktualität:</strong><br>
+      <li><strong>Aktualität</strong><br>
       Es ist möglich, jederzeit eine "neue" Karte aus "tagesaktuellen" OSM-Daten zu erzeugen. Hierzu sind die OSM-Daten aus dem Internet zu laden und die Karte ist neu zu bilden. Alle hierzu
       erforderlichen Ablaufschritte werden durch verschiedene Aufrufe des Perl-Programmes <strong>"mt.pl"</strong> vereinfacht.</li>
 
-      <li><strong>Inhalt:</strong><br>
+      <li><strong>Inhalt</strong><br>
       Über den Inhalt definieren sich die Objekte (Flächen, Linien, POIs) die auf der Karte in den verschiedenen Vergrößerungsstufen jeweils zur Anzeige kommen. In den Freizeitkarten
       vorhandene Standardobjekte können entfernt oder individuelle Elemente können hinzugefügt werden. Dies gilt für nahezu alle Elemente des OSM-Datenbestands. Die Definition der Objekte
-      erfolgt im wesentlichen in den drei Styledateien "polygons", "lines" und "points". Die Bearbeitung dieser Dateien erfolgt mit einem Standard-Texteditor (z.B. TextWrangler für OS X oder
-      Notepad++ für Windows). Umfangreiche Kommentare in den Styledateien erleichtern den Einstieg in das Thema.</li>
+      erfolgt im wesentlichen in den drei Styledateien "polygons", "lines" und "points". Die Bearbeitung dieser Dateien erfolgt mit einem Standard-Texteditor. Umfangreiche Kommentare in den
+      Styledateien erleichtern den Einstieg in das Thema.</li>
 
-      <li><strong>Design:</strong><br>
+      <li><strong>Design</strong><br>
       Das Design legt das optische Erscheinungsbild der Karte fest. Hierbei kann jedes Objekt in der Darstellung beeinflußt werden. Bei Flächen ist dies z.B. die Farbe, bei Linien z.B. die
       Breite und bei POIs das Darstellungsicon. Das Erscheinungsbild wird in einer binären TYP-Datei festgelegt, die mit einem speziellen Editor bearbeitet werden kann (z.B. TYPViewer für
       Windows).</li>
@@ -139,14 +131,14 @@
     <p>Die Aspekte "Inhalt" und "Design" stehen in enger Wechselwirkung zueinander. Soll z.B. ein neues Objekt auf der Karte angezeigt werden, so ist dieses Objekt sowohl inhaltlich als auch
     vom Erscheinungsbild zu definieren.</p>
 
-    <p><strong>Workflow zur Erstellung einer Freizeitkarte:</strong>
+    <p><strong>Workflow zur Erstellung einer Freizeitkarte</strong>
     </p>
 
     <p>Der Workflow in der Entwicklungsumgebung ist je nach Art der herzustellenden Karte unterschiedlich. Wir unterscheiden grundsätzlich zwei Arten:</p>
 
     <ol>
       <li>
-        <strong>Karten auf Basis von bestehenden OSM Daten Extrakten:</strong><br>
+        <strong>Karten auf Basis von bestehenden OSM Daten Extrakten</strong><br>
         Bei diesem Kartentyp existieren fertige Extrakte vom gewünschten Gebiet auf geofabrik, das heisst wir bauen vereinfacht nach dem folgenden Schema:<br>
 
         <ul>
@@ -166,7 +158,7 @@
       </li>
 
       <li>
-        <strong>Karten für die wir in der Entwicklungsumgebung die Region zuerst zuschneiden müssen:</strong><br>
+        <strong>Karten für die wir in der Entwicklungsumgebung die Region zuerst zuschneiden müssen</strong><br>
         Bei diesem Kartentyp existieren keine fertigen Extrakte vom gewünschten Gebiet auf GeoFabrik, darum müssen wir ein grösseres Gebiet als das eigentlich gewünschte herunterladen (in den
         meisten Fällen ganz Europa) und selbst zuschneiden. Bei diesem Kartentyp bauen wir vereinfacht nach dem folgenden Schema:<br>
 
@@ -191,142 +183,38 @@
       </li>
     </ol>
 
-    <p>Überblick über den Workflow für beide Karten Typen:</p>
+    <p>Überblick über den Workflow für beide Karten Typen</p>
 
     <p><img alt="" src="./../images/Entwicklung-Prozess.jpg" style="border-width:1px; border-style:solid; border-color:lightgray; max-width:100%; object-fit:contain">
     </p>
 
-    <p><strong>Bedienung:</strong>
+    <p><strong>Bedienung</strong>
     </p>
 
     <p><strong>MapTool (mt.pl):</strong><br>
-    Ruft man das Utility "mt.pl" (MapTool) mit dem Argument -h auf, wird folgender Hilfetext ausgegeben:</p>
+    Ruft man das Utility "mt.pl" (MapTool) ohne Argumente auf, wird folgender Hilfetext ausgegeben:</p>
 
     <pre class="programmcode">
-$ perl mt.pl -?
+$ perl mt.pl
 
-mt.pl - Map Tool for creating Garmin maps, 1.3.15 - 2019/03/02
+mt.pl - Map Tool, 1.3.19 - 2022/05/14
 
 Usage:
-perl mt.pl [--ram=&lt;value&gt;] [--cores=&lt;value&gt;] [--ele=&lt;value&gt;] \
-           [--typfile="&lt;filename&gt;"] [--style="&lt;dirname&gt;"] \
-           [--language="&lt;lang&gt;"] [--unicode] [--ntl="&lt;name-tag-list&gt;"] \
-           [--downloadbar] [--downloadspeed=&lt;value&gt;] [--continuedownload]\
-           [--dempath=&lt;path&gt;]\
-           &lt;Action&gt; &lt;ID&gt; | &lt;Code&gt; | &lt;Map&gt; [PPO] ... [PPO]
-  or
-perl mt.pl bootstrap [urls &lt;url_bounds&gt; &lt;url_sea&gt;]
-perl mt.pl bootstrap list
-
-  or for getting help:
-perl mt.pl -? | -h
-
-
-Examples:
-perl mt.pl                              bootstrap
-perl mt.pl                              build     Freizeitkarte_Hamburg
-perl mt.pl  --ram=1536    --cores=2     build     Freizeitkarte_Hamburg
-perl mt.pl  --ram=6000                  build     5815
-perl mt.pl  --ram=6000    --cores=max   build     5815
-perl mt.pl  --ram=6000    --cores=max   build     Freizeitkarte_Oesterreich  DEXTENDEDROUTING
-
-Options:
---ram      = javaheapsize in MB (join, split, build) (default = 1536)
---cores    = max. number of CPU cores (build) (1, 2, ..., max; default = 2)
---ele      = equidistance of elevation lines (fetch_ele) (10, 20; default = 20)
---typfile  = filename of a valid typfile to be used (build, gmap, nsis, gmapsupp, imagedir, typ) (default = freizeit.TYP)
---style    = name of the style to be used, must be a directory below styles (default = fzk)
---language = overwrite the default language of a map (en=english, de=german);
-             if you build a map for another language than the map's default language,
-             this option needs to be set for all subcommands, else it swaps back to the default language and possibly fails.
---unicode  = Build the map in unicode (CP65001) instead of in the native codepage of the map language.
-                --unicode
---ntl      = overwrite the default name-tag-list for the mkgmap run (name) with a specific list, e.g.
-                --ntl="name:en,int_name,name"
-             Please check mkgmap documentation for more information.
---downloadbar
-           = Show a download progress bar during actions 'bootstrap', 'fetch_osm' and 'fetch_ele'.
-                --downloadbar
---downloadspeed
-           = Set speed limit for downloads during actions 'bootstrap', 'fetch_osm' and 'fetch_ele'.
-             Setting speed limit in number of bytes:
-                --downloadspeedlimit=15
-             You can also set the speed limit in kilobytes (k), megabytes (m) or gigabytes (g) by using the correct character, e.g.:
-                --downloadspeedlimit=15m
---continuedownload
-           = try to continue interrupted downloads for actions 'fetch_osm' and 'fetch_ele'.
-                --continuedownload
-             Restrictions:
-             - can only work if you don't use the 'create' action, which cleans out any files from the working directories
-             - using this option on fully completed downloads will fail to download anything new.
-             - not guaranteed to work always and might create data garbage, but worth a try on huge downloads
---dempath
-           = specify a directory or ZIP file with HGT files used to add a Digital Elevation Model subfile to the map (build).
-                --dempath=D:/fzk/hgtfiles
-                --dempath=D:/fzk/hgtfiles/view3.zip
-             N.B. On Windows, use forward slashes.
-             Please check mkgmap documentation for more information.
-
---demtype
-           = specify the resolution of the HGT file in arc seconds. Supported resolutions are 1 and 3.
-             Used to define default demdist values.
-                --demtype=1
-                --demtype=3
-
---demdists
-           = Define dem-dists values for mkgmap in case --demtype is not set.
-                --demdists="9942,19884,29826,39768,49710,59652,69594,79536"
-             Please check mkgmap documentation for more information.
-
-PPO        = preprocessor options (multiple possible), to be invoked with D&lt;option&gt;
-
-Arguments:
-Action     = Action to be processed
-ID         = ID of the to processed map
-Code       = Code of the to processed map
-Map        = Name of the to be processed map
-
-Actions:
-bootstrap  =     Complete the Environment with needed downloads (boundaries)
-create     = 1.  (re)create all directories
-fetch_osm  = 2a. fetch osm data from url
-fetch_ele  = 2b. fetch elevation data from url
-join       = 3.  join osm and elevation data
-split      = 4.  split map data into tiles
-build      = 5.  build map files (img, mdx, tdb)
-gmap       = 6.  create gmap file (for BaseCamp OS X, Windows)
-nsis       = 6.  create nsis installer (full installer for Windows)
-gmapsupp   = 6.  create gmapsupp image (for GPS receiver)
-imagedir   = 6.  create image directory (e.g. for QLandkarte)
-
-ID = Code = Map  (default language):
-5810 = BADEN-WUERTTEMBERG         = Freizeitkarte_BADEN-WUERTTEMBERG                  (de)
-5811 = BAYERN                     = Freizeitkarte_BAYERN                              (de)
-5812 = BERLIN                     = Freizeitkarte_BERLIN                              (de)
-5813 = BRANDENBURG                = Freizeitkarte_BRANDENBURG                         (de)
-5814 = BREMEN                     = Freizeitkarte_BREMEN                              (de)
-5815 = HAMBURG                    = Freizeitkarte_HAMBURG                             (de)
-5816 = HESSEN                     = Freizeitkarte_HESSEN                              (de)
-5817 = MECKLENBURG-VORPOMMERN     = Freizeitkarte_MECKLENBURG-VORPOMMERN              (de)
-5818 = NIEDERSACHSEN              = Freizeitkarte_NIEDERSACHSEN                       (de)
-5819 = NORDRHEIN-WESTFALEN        = Freizeitkarte_NORDRHEIN-WESTFALEN                 (de)
-5820 = RHEINLAND-PFALZ            = Freizeitkarte_RHEINLAND-PFALZ                     (de)
-5821 = SAARLAND                   = Freizeitkarte_SAARLAND                            (de)
-5822 = SACHSEN                    = Freizeitkarte_SACHSEN                             (de)
-5823 = SACHSEN-ANHALT             = Freizeitkarte_SACHSEN-ANHALT                      (de)
-5824 = SCHLESWIG-HOLSTEIN         = Freizeitkarte_SCHLESWIG-HOLSTEIN                  (de)
-5825 = THUERINGEN                 = Freizeitkarte_THUERINGEN                          (de)
-6040 = AUT                        = Freizeitkarte_AUT                                 (de)
-6056 = BEL                        = Freizeitkarte_BEL                                 (fr)
-6756 = CHE                        = Freizeitkarte_CHE                                 (de)
-6203 = CZE                        = Freizeitkarte_CZE                                 (en)
-6208 = DNK                        = Freizeitkarte_DNK                                 (en)
-6276 = DEU                        = Freizeitkarte_DEU                                 (de)
-6250 = FRA                        = Freizeitkarte_FRA                                 (fr)
-6442 = LUX                        = Freizeitkarte_LUX                                 (fr)
-6528 = NLD                        = Freizeitkarte_NLD                                 (nl)
-6616 = POL                        = Freizeitkarte_POL                                 (pl)
-6752 = SWE                        = Freizeitkarte_SWE                                 (en)
+perl mt.pl [--ram=&lt;value&gt;]
+           [--cores=&lt;value&gt;]
+           [--ele=&lt;value&gt;]
+           [--typfile="&lt;filename&gt;"]
+           [--style="&lt;dirname&gt;"]
+           [--language="&lt;lang&gt;"]
+           [--unicode]
+           [--ntl="&lt;name-tag-list&gt;"]
+           [--downloadbar]
+           [--downloadspeed=&lt;value&gt;]
+           [--continuedownload]
+           [--dempath=&lt;path&gt;]
+           &lt;Action&gt;
+           &lt;ID&gt; | &lt;Code&gt; | &lt;Map&gt;
+           [PPO] ... [PPO]
 </pre>
     <p><strong>Terminal / Kommandofenster:</strong>
     </p>
@@ -370,7 +258,7 @@ ID = Code = Map  (default language):
     <ul>
       <li>leistungsstarke Mehr-Kern-CPU</li>
 
-      <li>Java-Virtual-Machine mit 64bit (32bit Version hat zu kleine maximale Speicherzuteilung)</li>
+      <li>Java-Virtual-Machine mit 64bit</li>
 
       <li>je benutztem Prozessorkern sollte mindestens 2 GB RAM zur Verfügung stehen</li>
     </ul>
@@ -381,11 +269,11 @@ ID = Code = Map  (default language):
     <ul>
       <li>der Einstieg in die Kartenentwicklung sollte mit einer möglichst kleinen Karte erfolgen</li>
 
-      <li>der Buildprozeß der Deutschlandkarte dauert bei Verwendung von 4 CPU-Kernen ca. 45 Minuten</li>
+      <li>der Buildprozeß der Deutschlandkarte dauert bei Verwendung von 4 CPU-Kernen circa 45 Minuten</li>
 
       <li>weitere Informationen zur Entwicklungsumgebung finden sich in der Datei "readme.txt"</li>
 
-      <li>die Entwicklungsumgebung ist lauffähig unter OS X, Windows und Linux</li>
+      <li>die Entwicklungsumgebung ist lauffähig unter macOS, Windows und Linux</li>
 
       <li>unter 64-Bit Linux-Systemen muss die Unterstützung für 32-Bit Programme installiert sein</li>
 
@@ -406,13 +294,13 @@ ID = Code = Map  (default language):
       <li>KULTURLAND: Darstellung von Ackerflächen [polygons-master]</li>
     </ul>
 
-    <h3>Freizeitkarte Entwicklungsumgebung:</h3>
+    <h3>Freizeitkarte Entwicklungsumgebung</h3>
 
     <p><a href="https://github.com/freizeitkarte/fzk-mde-garmin/archive/LATEST.zip">Download</a>
     </p>
 
-    <p><strong>Zusatzinformation:</strong><br>
-    Die Datei mit der Entwicklungsumgebung liegt unter dem Namen <i>fzk‑mde‑garmin‑LATEST.zip</i> auf github zum Herunterladen bereit. In der ZIP Datei ist das bekannte Verzeichnis
+    <p><strong>Zusatzinformation</strong><br>
+    Die Datei mit der Entwicklungsumgebung liegt unter dem Namen <i>fzk‑mde‑garmin‑LATEST.zip</i> auf github zum Herunterladen bereit. In der ZIP Datei ist das Verzeichnis
     <i>Freizeitkarte‑Entwicklung</i> in einem zusätzlichen Verzeichnis mit dem Namen <i>fzk‑mde‑garmin‑Latest</i> verpackt.</p>
   </div>
 </body>

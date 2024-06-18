@@ -6,9 +6,10 @@
 #
 # Version:
 # - v0.1.0 - 2019/05/03 initial release
+# - v0.2.0 - 2024/06/01 update tidy v5.6 -> v5.8
 #
 # Prerequisites:
-# - tidy-html5 installed (v5.6)
+# - tidy-html5 installed (v5.8)
 # ------------------------------------
 
 # set -o xtrace
